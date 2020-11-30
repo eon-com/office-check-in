@@ -1,0 +1,28 @@
+@import "mixins/padding";
+
+:host {
+  height: 100%;
+
+  .content {
+    @include padding(1rem, 1rem, 1rem, 1rem);
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+    box-sizing: border-box;
+    overflow: auto;
+
+    @media only screen and (min-width: 65rem) {
+      @include padding(3rem, 3rem, 3rem, 3rem);
+    }
+
+    ::ng-deep {
+      h2, h3 {
+        font-size: 2.25rem;
+      }
+
+      h3 {
+        font-size: 1.625rem;
+      }
+    }
+  }
+}

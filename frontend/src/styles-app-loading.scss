@@ -1,0 +1,9 @@
+.app-loading {
+  .logo {
+    width: 200px;
+    height: 48px;
+
+    // this way asset gets processed by webpack
+    background-size: contain;
+  }
+}

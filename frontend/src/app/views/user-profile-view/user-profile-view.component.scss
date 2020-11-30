@@ -1,0 +1,29 @@
+
+form {
+  width: 100%;
+
+  mat-form-field {
+    width: 320px;
+  }
+
+  mat-spinner-button {
+    width: auto;
+    display: inline-block;
+  }
+
+  @media only screen and (max-width: 65rem) {
+    .flex.flex-row {
+      flex-direction: column;
+    }
+
+    mat-form-field {
+      width: 100%;
+    }
+
+    ::ng-deep {
+      .mat-checkbox-layout {
+        white-space: normal;
+      }
+    }
+  }
+}

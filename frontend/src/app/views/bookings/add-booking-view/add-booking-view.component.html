@@ -1,0 +1,62 @@
+<app-page>
+  <h2>{{'BOOKINGS.ADD.PAGE_TITLE' | translate}}</h2>
+
+  <p [innerHTML]="'BOOKINGS.ADD.PAGE_DESCRIPTION' | translate"></p>
+
+  <div>
+    <app-notification-box *ngIf="areas && areas.length === 0" icon="emoticon-sad-outline"
+                          message="{{'BOOKINGS.ADD.INFO_NO_AREAS_JOINED' | translate}}"></app-notification-box>
+    <app-notification-box *ngIf="areas === null" icon="emoticon-sad-outline"
+                          message="{{'AREAS.LIST.INFO_NO_BOOKING_ITEMS' | translate}}"></app-notification-box>
+
+    <mat-vertical-stepper linear #stepper *ngIf="areas && areas.length > 0">
+      <mat-step [stepControl]="areaFormGroup">
+        <form [formGroup]="areaFormGroup">
+          <ng-template matStepLabel>{{'BOOKINGS.ADD.FORM.FIELDS.AREA.TITLE' | translate}}</ng-template>
+          <ng-template matStepperIcon="edit">
+            <mat-icon svgIcon="check"></mat-icon>
+          </ng-template>
+
+          <mat-radio-group color="primary" formControlName="areaControl" (change)="areaSelected($event)">
+            <mat-radio-button *ngFor="let area of areas" [value]="area.id">
+              <div>{{area.locationName}}</div>
+              <div class="sub-text" *ngIf="area.locationAddress">{{area.locationAddress}}</div>
+            </mat-radio-button>
+          </mat-radio-group>
+          <mat-error *ngIf="areaFormGroup.invalid">{{'BOOKINGS.ADD.FORM.FIELDS.AREA.ERROR' | translate}}</mat-error>
+
+          <div class="text-align-left margin-top">
+            <button mat-stroked-button matStepperNext color="primary"
+                    [disabled]="areaFormGroup.controls.areaControl.invalid">{{'COMMON.BUTTONS.NEXT_STEP' | translate}}</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="dateFormGroup" class="calendar-step">
+        <form [formGroup]="dateFormGroup">
+          <ng-template matStepLabel>{{'BOOKINGS.ADD.FORM.FIELDS.DATE.TITLE' | translate}}</ng-template>
+          <ng-template matStepperIcon="edit">
+            <mat-icon svgIcon="check"></mat-icon>
+          </ng-template>
+
+          <app-custom-date-picker (dateSelectionChanged)="dateSelectionChanged($event)"
+                                  [dateIsSelectable]="isDateBookable"
+                                  [dateClass]="dateClass"
+                                  [maxSelectableDates]="maxBookableDays"
+                                  dateInputLabel="{{'BOOKINGS.ADD.FORM.FIELDS.DATE.LABEL' | translate}}"
+                                  dateInputHint="{{'BOOKINGS.ADD.FORM.FIELDS.DATE.HINT' | translate}}"
+                                  datesToSelectRemainingLabel="{{'BOOKINGS.ADD.FORM.FIELDS.DATE.HINT_2' | translate}}"
+                                  openCalendarButtonLabel="{{'BOOKINGS.ADD.BUTTONS.OPEN_CALENDAR.TITLE' | translate}}"></app-custom-date-picker>
+
+          <div class="button-row">
+            <div class="margin-bottom margin-right">
+              <button mat-stroked-button matStepperPrevious
+                      color="primary">{{'COMMON.BUTTONS.PREVIOUS_STEP' | translate}}</button>
+            </div>
+            <mat-spinner-button (btnClick)="bookArea()" [options]="confirmBookingBtnOptions"
+                                class="margin-bottom"></mat-spinner-button>
+          </div>
+        </form>
+      </mat-step>
+    </mat-vertical-stepper>
+  </div>
+</app-page>

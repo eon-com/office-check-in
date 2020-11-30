@@ -1,0 +1,25 @@
+
+<div class="app-container">
+  <mat-toolbar *ngIf="mobileQuery.matches" class="mobile-toolbar">
+    <button mat-icon-button (click)="toggleSidenav()" color="secondary">
+      <mat-icon svgIcon="menu" *ngIf="!sidenav.opened"></mat-icon>
+      <mat-icon svgIcon="close" *ngIf="sidenav.opened"></mat-icon>
+    </button>
+    <div class="flex-space"></div>
+    <mat-icon svgIcon="oc_logo" class="logo"></mat-icon>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #sidenav [mode]="mobileQuery.matches ? 'over' : 'side'" [opened]="this.showSideNav">
+      <div class="sidebar">
+        <router-outlet name="sidebar"></router-outlet>
+      </div>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <div class="page" role="main">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

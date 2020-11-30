@@ -1,0 +1,47 @@
+<app-page>
+  <h2>{{'JOIN.PAGE_TITLE' | translate}}</h2>
+  <p>{{'JOIN.PAGE_DESCRIPTION' | translate}}</p>
+
+  <ng-container [ngSwitch]="state">
+    <div *ngSwitchCase="'check_user'">
+      <app-notification-box icon="timer-sand" message="{{'JOIN.STEPS.CHECK_USER.TEXT' | translate}}"></app-notification-box>
+    </div>
+    <div *ngSwitchCase="'not_authorized'">
+      <app-notification-box icon="login" message="{{'JOIN.STEPS.NOT_AUTHORIZED.TEXT' | translate}}"></app-notification-box>
+      <div class="margin-top">
+        <button mat-stroked-button (click)="gotoLogin()" color="primary"
+                [attr.aria-label]="'JOIN.BUTTONS.LOGIN.TITLE' | translate">
+          <mat-icon svgIcon="login"></mat-icon>
+          {{'JOIN.BUTTONS.LOGIN.TITLE' | translate}}
+        </button>
+      </div>
+    </div>
+    <div *ngSwitchCase="'join_area'">
+      <app-notification-box icon="timer-sand" message="{{'JOIN.STEPS.JOIN_AREA.TEXT' | translate}}"></app-notification-box>
+    </div>
+    <div *ngSwitchCase="'area_not_found'">
+      <app-notification-box icon="emoticon-sad-outline" message="{{'JOIN.STEPS.NOT_FOUND.TEXT' | translate}}"></app-notification-box>
+      <div class="margin-top">
+        <button mat-stroked-button (click)="gotoMyAreas()" color="primary"
+                [attr.aria-label]="'JOIN.BUTTONS.MY_AREAS.TITLE' | translate">
+          <mat-icon svgIcon="tooltip-account"></mat-icon>
+          {{'JOIN.BUTTONS.MY_AREAS.TITLE' | translate}}
+        </button>
+      </div>
+    </div>
+    <div *ngSwitchCase="'join_area_succeeded'">
+      <app-notification-box icon="check" message="{{'JOIN.STEPS.JOIN_AREA_SUCCEEDED.TEXT' | translate}}"></app-notification-box>
+    </div>
+    <div *ngSwitchDefault>
+      <app-notification-box icon="emoticon-sad-outline" message="{{'JOIN.STEPS.ERROR.TEXT' | translate}}"></app-notification-box>
+      <div class="margin-top">
+        <button mat-stroked-button (click)="gotoMyAreas()" color="primary"
+                [attr.aria-label]="'JOIN.BUTTONS.MY_AREAS.TITLE' | translate">
+          <mat-icon svgIcon="tooltip-account"></mat-icon>
+          {{'JOIN.BUTTONS.MY_AREAS.TITLE' | translate}}
+        </button>
+      </div>
+    </div>
+  </ng-container>
+
+</app-page>

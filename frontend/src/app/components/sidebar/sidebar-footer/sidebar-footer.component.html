@@ -1,0 +1,12 @@
+<mat-icon svgIcon="oc_logo" class="logo"></mat-icon>
+<div class="footer">
+  <a (click)="signout()" [routerLink]="" close-sidebar *ngIf="isAuthed" class="logout">
+    <mat-icon svgIcon="arrow-right"></mat-icon>
+    <span>{{'SIDEBAR.MAIN.BUTTONS.SIGNOUT.TITLE' | translate}}</span>
+  </a>
+  <app-language-selector></app-language-selector>
+</div>
+<div class="flex flex-row sub-text margin-top">
+  <span class="version">{{versionString}}</span>
+  <div class="flex-space"></div>
+</div>

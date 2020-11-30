@@ -1,0 +1,60 @@
+<app-page>
+  <h2>{{'SIGNUP.PAGE_TITLE' | translate}}</h2>
+
+  <p>{{'SIGNUP.PAGE_DESCRIPTION' | translate}}</p>
+
+  <div class="flex">
+    <div class="flex-small-content">
+      <h3 class="margin-top" *ngIf="signupType === 'member'">{{'SIGNUP.FORM.TITLE_MEMBER' | translate}}</h3>
+      <h3 class="margin-top" *ngIf="signupType === 'manager'">{{'SIGNUP.FORM.TITLE_MANAGER' | translate}}</h3>
+
+      <form [formGroup]="signupForm" class="margin-top" (submit)="signup()">
+        <ng-container *ngIf="signupType === 'manager'">
+          <mat-form-field appearance="outline">
+            <mat-label>{{'SIGNUP.FORM.FIELDS.TEAMNAME.LABEL' | translate}}</mat-label>
+            <input matInput name="teamname" placeholder="{{'SIGNUP.FORM.FIELDS.TEAMNAME.PLACEHOLDER' | translate}}"
+                   formControlName="teamname" aria-required="true">
+            <mat-error *ngIf="fieldIsInvalid('teamname')">
+              {{'SIGNUP.FORM.FIELDS.TEAMNAME.ERROR' | translate}}
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>{{'SIGNUP.FORM.FIELDS.TEAMROLE.LABEL' | translate}}</mat-label>
+            <textarea matInput name="teamrole" placeholder="{{'SIGNUP.FORM.FIELDS.TEAMROLE.PLACEHOLDER' | translate}}"
+                   formControlName="teamrole" aria-required="true"></textarea>
+            <mat-error *ngIf="fieldIsInvalid('teamrole')">
+              {{'SIGNUP.FORM.FIELDS.TEAMROLE.ERROR' | translate}}
+            </mat-error>
+          </mat-form-field>
+
+          <mat-divider></mat-divider>
+        </ng-container>
+
+        <mat-form-field appearance="outline">
+          <mat-label>{{'SIGNUP.FORM.FIELDS.EMAIL.LABEL' | translate}}</mat-label>
+          <input matInput name="email" placeholder="{{'SIGNUP.FORM.FIELDS.EMAIL.LABEL' | translate}}"
+                 formControlName="email" aria-required="true">
+          <mat-error *ngIf="fieldIsInvalid('email')">
+            {{'SIGNUP.FORM.FIELDS.EMAIL.ERROR' | translate}}
+          </mat-error>
+        </mat-form-field>
+
+        <app-password-input formControlName="password"></app-password-input>
+
+        <mat-spinner-button [options]="signupBtnOptions" [disabled]="signupForm.invalid"></mat-spinner-button>
+
+        <div class="margin-top">
+          {{'SIGNUP.LOGIN.DESCRIPTION' | translate}} <a
+          [routerLink]="Navigation.LOGIN"><span>{{'SIGNUP.LOGIN.LINK' | translate}}</span></a>
+        </div>
+      </form>
+    </div>
+
+    <div class="flex-space"></div>
+    <a [routerLink]="Navigation.SIGNUP" class="icon-link margin-top">
+      <mat-icon svgIcon="arrow-left"></mat-icon>
+      <span>{{'COMMON.BUTTONS.BACK_BUTTON.SIGNUP_ROLE_SELECT' | translate}}</span>
+    </a>
+  </div>
+</app-page>

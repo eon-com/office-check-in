@@ -1,0 +1,35 @@
+<div class="flex flex-row flex-wrap-reverse date-picker-container">
+  <mat-form-field class="date-picker margin-right">
+    <mat-chip-list #chipList>
+      <mat-chip
+        *ngFor="let value of daysSelected"
+        [selectable]="false"
+        [removable]="true"
+        (removed)="remove(value)"
+        [attr.aria-label]="value | localizedDate">
+        {{ value | localizedDate }}
+        <mat-icon matChipRemove svgIcon="close"></mat-icon>
+      </mat-chip>
+      <input matInput [matDatepicker]="picker"
+             #inputField
+             placeholder="{{dateInputLabel}}"
+             [attr.aria-label]="dateInputLabel"
+             [attr.aria-describedby]="'datepicker_input_hint'"
+             (dateChange)="onDateSelect($event)"
+             (dateInput)="currentDate = $event.value"
+             (keydown.enter)="onDateEnter()"
+             [matChipInputFor]="chipList"
+             [min]="fromDate" [max]="toDate" [matDatepickerFilter]="isDaySelectable">
+    </mat-chip-list>
+    <mat-datepicker touchUi #picker [dateClass]="getDateClass"></mat-datepicker>
+    <mat-hint align="start" id="datepicker_input_hint">{{dateInputHint}}</mat-hint>
+    <mat-hint align="end">{{maxSelectableDates - daysSelected.length}} {{datesToSelectRemainingLabel}}</mat-hint>
+  </mat-form-field>
+  <div class="button-container">
+    <button mat-stroked-button (click)="picker.open()" color="primary" class="icon-button"
+            [attr.aria-label]="openCalendarButtonLabel">
+      <mat-icon svgIcon="calendar"></mat-icon>
+      {{openCalendarButtonLabel}}
+    </button>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+@import "theme";
+
+@mixin a11y-outline($type: outline, $color) {
+  @if $type == outline {
+    outline: $color auto 1px !important;
+  } @else {
+    border: 2px solid $color;
+  }
+}

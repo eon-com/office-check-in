@@ -1,0 +1,31 @@
+@import '~@angular/material/theming';
+@import "palettes";
+
+$color-white: white !default;
+$color-black: black !default;
+
+$color-grey-100: mat-color($md-blue, 100) !default;
+$color-grey-200: mat-color($md-blue, 200) !default;
+$color-grey-500: mat-color($md-blue, 500) !default;
+$color-grey-600: mat-color($md-blue, 600) !default;
+$color-grey-800: mat-color($md-blue, 800) !default;
+$color-grey-900: mat-color($md-blue, 900) !default;
+$color-grey-A100: mat-color($md-grey, A100) !default;
+$color-grey-A200: mat-color($md-grey, A200) !default;
+
+$color-primary: mat-color($md-yellow, 500) !default;
+$color-secondary: mat-color($md-blue, 500) !default;
+
+$color-text: mat-color($md-blue, 500) !default;
+$color-text-light: $color-grey-500 !default;
+$color-text-medium: $color-grey-900 !default;
+$color-text-dark: $color-grey-A200 !default;
+
+$color-background: mat-color($md-blue, 50) !default;
+$color-background-light: mat-color($md-blue, 50) !default;
+$color-background-dark: mat-color($md-blue, 500) !default;
+
+$font-black: "Asap Medium", Helvetica, sans-serif !default;
+$font-bold: "Asap Bold", Helvetica, sans-serif !default;
+$font-regular: "Asap", Helvetica, sans-serif !default;
+

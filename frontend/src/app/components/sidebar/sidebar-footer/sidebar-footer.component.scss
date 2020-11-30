@@ -1,0 +1,44 @@
+@import "theme";
+
+:host {
+  margin-top: auto;
+  display: block;
+}
+
+.logo {
+  width: 200px;
+  height: 100px;
+  margin-bottom: 50px;
+}
+
+.footer {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.version {
+  display: inline-block;
+  margin-right: 1em;
+}
+
+a {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+
+  .mat-icon {
+    margin-right: 0.5rem;
+  }
+
+  &.logout {
+    color: $color-secondary;
+
+    span {
+      &::before {
+        background-color: $color-secondary;
+      }
+    }
+  }
+}

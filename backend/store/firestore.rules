@@ -1,0 +1,106 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+  	function prefix() {
+    	return /databases/{database}/documents;
+    }
+
+    function getAreaIdForBooking(booking) {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid)/bookings/$(booking)).data.areaId;
+    }
+
+    function areaBookingNotExists(areaId, booking) {
+       return !exists(/databases/$(database)/documents/areas/$(areaId)/booking/$(booking))
+    }
+
+    function getArea(booking) {
+    	return get(/databases/$(database)/documents/areas/$(request.resource.data.areaId)/booking/$(booking)).data;
+    }
+    function getAreaAfter(booking) {
+    	return getAfter(/databases/$(database)/documents/areas/$(request.resource.data.areaId)/booking/$(booking)).data;
+    }
+
+    function getUserBooking() {
+    	return get(/databases/$(database)/documents/users/$(request.auth.uid)/bookings/$(booking)).data
+    }
+    function getUserRoles() {
+    	return get(/databases/$(database)/documents/users/$(request.auth.uid)/roles/admin).data
+    }
+
+    function getArea2(booking) {
+    	let areaId = get(/databases/$(database)/documents/users/$(request.auth.uid)/bookings/$(booking)).data.areaId;
+    	return get(/databases/$(database)/documents/areas/$(areaId)/booking/$(booking)).data;
+    }
+
+    function getAreaAfter2(booking) {
+    	let areaId = get(/databases/$(database)/documents/users/$(request.auth.uid)/bookings/$(booking)).data.areaId;
+    	return getAfter(/databases/$(database)/documents/areas/$(areaId)/booking/$(booking)).data;
+    }
+
+    function getAreaData(areaId) {
+    	return get(/databases/$(database)/documents/areas/$(areaId)).data;
+    }
+
+    function isUserPartOfArea(booking) {
+      // needs improvement - check against new users collection of an area
+      return true;
+    }
+
+
+    function hasAreaWithName(areaName) {
+      let n = areaName.trim();
+      let areaRef = /databases/$(database)/documents/areas_names/$(n);
+      let ex = exists(areaRef);
+      return ex;
+    }
+
+    function isOwner(owner, userId) {
+        return path('/databases/(default)/documents/users/' + userId) == owner;
+    }
+
+    match /areas_names/{areaId} {
+      allow read: if request.auth.uid != null;
+      allow write: if request.auth.uid != null;
+    }
+
+    match /users/{userId} {
+    	allow read, write: if request.auth.uid != null
+
+            match /bookings/{booking} {
+    		allow read: if request.auth.uid == userId;
+				allow create, update: if
+        debug(
+            ((areaBookingNotExists(request.resource.data.areaId, request.resource.id) && getAreaAfter(booking).count == 1) ||
+        	 (getAreaData(request.resource.data.areaId).capacity > getArea(request.resource.id).count &&
+					 getAreaAfter(booking).count == getArea(request.resource.id).count + 1))
+           && isUserPartOfArea(booking)
+        )
+        allow delete:
+        	if getAreaAfter2(booking).count == getArea2(booking).count - 1
+
+    	}
+      match /roles/{admin} {
+        allow read, write: if request.auth.uid == userId;
+      }
+    }
+
+    match /areas/{areaId} {
+      allow create: if hasAreaWithName(request.resource.data.locationName) == false;
+      allow update: if request.auth.uid != null && !request.resource.data.diff(resource.data).affectedKeys().hasAny(["creator"]);
+      allow read: if request.auth.uid != null;
+
+      match /booking/{booking} {
+        allow write, read: if request.auth.uid != null
+      }
+
+      match /users/{userId} {
+        allow read, write: if request.auth.uid != null;
+      }
+    }
+
+    match /invitations/{document=**} {
+      allow read, write: if request.auth.uid != null;
+    }
+
+  }
+}

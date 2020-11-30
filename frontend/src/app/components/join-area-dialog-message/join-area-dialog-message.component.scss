@@ -1,0 +1,27 @@
+@import "theme";
+@import "mixins/padding";
+@import "mixins/margin";
+
+.dialog-content {
+  border-radius: .25rem;
+  background-color: $color-background;
+
+  @include margin(1.5rem, 0, 0, 0);
+  @include padding(1.5rem, 1.5rem, 1.5rem, 1.5rem);
+
+  h2 {
+    font-family: $font-black;
+    font-size: 1.625rem;
+    color: mat-color($md-blue, 400);
+  }
+
+  p {
+    font-family: $font-bold;
+    font-size: 1rem;
+    color: mat-color($md-blue, 400);
+
+    &.strong {
+      font-family: $font-black;
+    }
+  }
+}

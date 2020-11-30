@@ -1,0 +1,18 @@
+<div *ngIf="processAvailable">
+  <app-notification-box *ngIf="state == 'IDLE'" [icon]="ico.idle"
+                        message="{{msg.idle | translate}}"></app-notification-box>
+  <app-notification-box *ngIf="state == 'LOADING'" [icon]="ico.loading"
+                        message="{{msg.loading | translate}}"></app-notification-box>
+  <app-notification-box *ngIf="state == 'NOT_FOUND'" [icon]="ico.not_found"
+                        message="{{msg.not_found | translate}}"></app-notification-box>
+  <app-notification-box *ngIf="state == 'NOT_AUTHORIZED'" [icon]="ico.not_authorized"
+                        message="{{msg.not_authorized | translate}}"></app-notification-box>
+  <app-notification-box *ngIf="state === 'ERROR'" [icon]="ico.error"
+                        message="{{msg.error | translate}}"></app-notification-box>
+  <app-notification-box *ngIf="state === 'SUCCESS' && showSuccess" [icon]="ico.success"
+                        message="{{msg.success | translate}}"></app-notification-box>
+</div>
+<div *ngIf="!processAvailable || !this.name">
+  <app-notification-box icon="bomb" message="this should never happen.."></app-notification-box>
+  <p class="sub-text">process: {{this.name | json}} | available: {{processAvailable | json}}</p>
+</div>

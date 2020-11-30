@@ -1,0 +1,4 @@
+<div class="toast-content">
+  <mat-icon *ngIf="data.icon" [svgIcon]="data.icon" class="margin-right"></mat-icon>
+  {{data.message | translate:data.translateParameter}}
+</div>

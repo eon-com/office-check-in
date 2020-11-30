@@ -1,0 +1,14 @@
+@import "theme";
+@import "mixins/margin";
+
+:host {
+  display: flex;
+  align-items: center;
+
+  .mat-icon {
+    width: 6rem;
+    height: 6rem;
+    color: $color-text-light;
+    @include margin($right: 1rem);
+  }
+}

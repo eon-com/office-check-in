@@ -1,0 +1,61 @@
+@import "theme";
+@import "mixins";
+
+::ng-deep {
+  .mat-standard-chip:focus {
+    @include a11y-outline(border, mat-color($md-blue, 800));
+  }
+
+  .date-picker-container {
+    align-items: stretch;
+  }
+
+  .date-picker {
+    flex: 1 0 300px;
+  }
+
+  .mat-calendar-table-header {
+    color: $color-text-dark;
+  }
+
+  .mat-calendar-body {
+    .mat-calendar-body-label {
+      color: $color-text-dark;
+    }
+
+    .mat-calendar-body-cell {
+      &.selected {
+        .mat-calendar-body-cell-content {
+          background: $color-primary;
+          border-radius: 100%;
+          color: $color-white;
+          font-family: $font-bold;
+        }
+
+        &:not(.mat-calendar-body-disabled):hover > .mat-calendar-body-cell-content,
+        &:not(.mat-calendar-body-disabled).mat-calendar-body-active > .mat-calendar-body-cell-content {
+          background-color: $color-secondary;
+          color: $color-white;
+        }
+      }
+
+      &.already-booked.mat-calendar-body-disabled > .mat-calendar-body-cell-content {
+        border-color: $color-text-light;
+        background-color: $color-background;
+      }
+
+      &.full.mat-calendar-body-disabled > .mat-calendar-body-cell-content {
+        background-color: $color-background;
+      }
+
+      &.mat-calendar-body-active {
+        @include a11y-outline(outline, mat-color($md-blue, 800));
+      }
+    }
+  }
+
+  .button-container {
+    align-self: center;
+    @include margin(1rem, 0, 1rem, 0);
+  }
+}

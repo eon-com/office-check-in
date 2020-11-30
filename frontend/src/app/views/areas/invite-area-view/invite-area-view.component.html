@@ -1,0 +1,26 @@
+<app-page>
+  <h2>{{'INVITE_AREA_MEMBERS.PAGE_TITLE' | translate}}</h2>
+
+  <p [innerHTML]="'INVITE_AREA_MEMBERS.PAGE_DESCRIPTION' | translate"></p>
+
+  <app-notification-box *ngIf="!area" icon="timer-sand"
+                        message="{{'COMMON.LOADING' | translate}}"></app-notification-box>
+
+  <div class="flex" *ngIf="area">
+    <app-notification-box [icon]="'information-outline'"
+                          [message]="'INVITE_AREA_MEMBERS.INVITE_DESCRIPTION' | translate"></app-notification-box>
+    <div class="significant-content box margin-top text-ellipsis">
+      {{buildJoinLink(area.id)}}
+    </div>
+    <div class="button-box margin-top text-align-right">
+      <button type="button" mat-raised-button color="primary"
+              (click)="copyToClipboard(area.id)">{{'COMMON.BUTTONS.COPY_JOIN_LINK' | translate}}</button>
+    </div>
+
+    <div class="flex-space"></div>
+    <a [routerLink]="Navigation.AREAS" class="icon-link">
+      <mat-icon svgIcon="arrow-left"></mat-icon>
+      <span>{{'COMMON.BUTTONS.BACK_BUTTON.AREAS' | translate}}</span>
+    </a>
+  </div>
+</app-page>

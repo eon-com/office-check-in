@@ -1,0 +1,38 @@
+<app-page>
+  <h2>{{'EDIT_AREA.PAGE_TITLE' | translate}}</h2>
+
+  <p>{{'EDIT_AREA.PAGE_DESCRIPTION' | translate}}</p>
+
+  <app-process-indicator name="loadArea"></app-process-indicator>
+
+  <div *ngIf="area" class="flex">
+    <div class="flex-small-content">
+      <h3 class="margin-top">{{'EDIT_AREA.FORM.TITLE' | translate}}</h3>
+      <form class="margin-top" (submit)="editArea()" autocomplete="off" [formGroup]="editAreaForm">
+
+        <mat-form-field appearance="outline">
+          <mat-label>{{'EDIT_AREA.FORM.FIELDS.NAME.LABEL' | translate}}</mat-label>
+          <input matInput name="locationName" type="text"
+                 placeholder="{{'EDIT_AREA.FORM.FIELDS.NAME.PLACEHOLDER' | translate}}" formControlName="locationName"
+                 aria-required="true">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>{{'EDIT_AREA.FORM.FIELDS.CAPACITY.LABEL' | translate}}</mat-label>
+          <input matInput name="capacity" type="number"
+                 placeholder="{{'EDIT_AREA.FORM.FIELDS.CAPACITY.PLACEHOLDER' | translate}}" formControlName="capacity"
+                 aria-required="true" min="0">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>{{'EDIT_AREA.FORM.FIELDS.ADDRESS.LABEL' | translate}}</mat-label>
+          <input matInput name="address" type="text"
+                 placeholder="{{'EDIT_AREA.FORM.FIELDS.ADDRESS.PLACEHOLDER' | translate}}" formControlName="address"
+                 aria-required="true">
+        </mat-form-field>
+
+        <mat-spinner-button (btnClick)="editArea()" [options]="editAreaBtnOption"></mat-spinner-button>
+      </form>
+    </div>
+  </div>
+</app-page>

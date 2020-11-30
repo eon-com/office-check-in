@@ -1,0 +1,544 @@
+{
+  "APP_TITLE": "Office Check-in",
+  "COMMON": {
+    "BUTTONS": {
+      "OK": "OK",
+      "CANCEL": "Abbrechen",
+      "NEXT_STEP": "Nächster Schritt",
+      "PREVIOUS_STEP": "Vorheriger Schritt",
+      "CLOSE": "Schließen",
+      "DELETE": "Löschen",
+      "COPY_JOIN_LINK": "Link in die Zwischenablage kopieren",
+      "BACK_BUTTON": {
+        "LOGIN": "Zurück zum Login",
+        "AREAS": "Zurück zu Teamflächen",
+        "SIGNUP_ROLE_SELECT": "Zurück zur Rollenauswahl"
+      },
+      "EDIT_AREA": "Teamfläche bearbeiten",
+      "AREA_ACTIONS": "Teamflächenaktionen",
+      "SAVE_CHANGES": "Änderungen speichern",
+      "DELETE_AREA": "Teamfläche löschen"
+    },
+    "LANGUAGES": {
+      "DE": "Deutsch",
+      "EN": "Englisch"
+    },
+    "FORM": {
+      "FIELDS": {
+        "PASSWORD": {
+          "LABEL": "Passwort",
+          "ERROR": "Bitte ein sicheres Passwort eingeben",
+          "HINT": {
+            "TITLE": "Passwortinformation",
+            "MESSAGE": "Dein Passwort muss folgenden Kriterien entsprechen:<ul><li>Min. 1 Kleinbuchstabe<li>Min. 1 Großbuchstabe<li>Min. 1 Spezielles Zeichen<li>Min. 1 Zahl<li>Min. 8 Zeichen lang</ul>"
+          }
+        },
+        "PASSWORD_CONFIRM": {
+          "LABEL": "Passwort bestätigen",
+          "ERROR": "Bitte Passwort erneut eingeben"
+        }
+      }
+    },
+    "LOADING": "Laden, bitte warten...",
+    "NOT_FOUND": "Daten nicht gefunden.",
+    "NOT_AUTHORIZED": "Zugriff nicht erlaubt.",
+    "DATA_LOAD_ERROR": "Fehler beim Laden der Daten."
+  },
+  "COMPONENTS": {
+    "JOIN_AREA_DIALOG_MESSAGE": {
+      "CAPACITY": "Plätze: {{capacity}}",
+      "ADDRESS": "{{address}}"
+    },
+    "LANGUAGE_SELECTOR": {
+      "CHANGE_LANGUAGE": "Sprache wechseln"
+    }
+  },
+  "DIALOGS": {
+    "JOIN_AREA": {
+      "TITLE": "Perfekt!",
+      "MESSAGE": "Du bist der Teamfläche erfolgreich beigetreten.",
+      "CAPACITY": "Größe: {{capacity}}",
+      "ADDRESS": "{{address}}"
+    }
+  },
+  "SIDEBAR": {
+    "GENERAL": {
+      "SUPPORT": "Hilfe & Support",
+      "ABOUT": "Über(s) d lab_"
+    },
+    "LOGIN": {
+      "TITLE": "Anmelden"
+    },
+    "SIGNUP": {
+      "TITLE": "Registrieren"
+    },
+    "PASSWORD_RESET": {
+      "TITLE": "Passwort vergessen"
+    },
+    "MAIN": {
+      "TITLE": "Hallo",
+      "BUTTONS": {
+        "ADD_BOOKING": {
+          "TITLE": "Neue Buchung"
+        },
+        "SIGNOUT": {
+          "TITLE": "Ausloggen"
+        }
+      },
+      "NAV": {
+        "MY_BOOKINGS.TITLE": "Meine Buchungen",
+        "MY_AREAS.TITLE": "Meine Teamflächen",
+        "MY_PROFILE.TITLE": "Meine Kontoeinstellungen"
+      }
+    },
+    "JOIN": {
+      "TITLE": "Teamfläche beitreten",
+      "BUTTONS": {
+        "SIGNOUT": {
+          "TITLE": "Ausloggen"
+        }
+      }
+    }
+  },
+  "LOGIN": {
+    "PAGE_TITLE": "Dein Büro ist komplett belegt?",
+    "PAGE_DESCRIPTION": "In Zeiten von COVID-19 ist das keine gute Lösung. Deshalb haben wir Office Check-In entwickelt: Mit Office Check-In kannst Du Deine Vor-Ort-Bürozeiten vorab planen. Buche jetzt einfach Deinen gewünschten Büro-Tag!",
+    "FORM": {
+      "TITLE": "Melde Dich hier an",
+      "FIELDS": {
+        "EMAIL": {
+          "LABEL": "E-Mail-Adresse",
+          "ERROR": "Bitte gib eine gültige E-Mail-Adresse ein"
+        },
+        "PASSWORD": {
+          "LABEL": "Passwort",
+          "ERROR": "Bitte gib Dein Passwort ein"
+        }
+      },
+      "BUTTONS": {
+        "LOGIN": {
+          "TITLE": "Anmelden"
+        }
+      }
+    },
+    "PASSWORD_RECOVERY_LINK": "Passwort vergessen?",
+    "ERRORS": {
+      "TITLE": "Login fehlgeschlagen!",
+      "UNKNOWN": "Beim Login ist ein unbekannter Fehler aufgetreten.",
+      "WRONG_CREDENTIALS": "Du hast eine ungültige E-Mail-Adresse oder ein ungültiges Passwort eingegeben.",
+      "USER_NOT_VERIFIED": "Bitte bestätige vor dem Login dein Konto. Du hast dafür eine E-Mail mit einem Bestätigungslink erhalten.",
+      "TOO_MANY_REQUESTS": "Zu viele fehlgeschlagene Loginversuche. Bitte versuche es in ein paar Minuten erneut.",
+      "RESEND_EMAIL_VERIFICATION": "Bestätigungs-E-Mail erneut senden"
+    },
+    "RESEND_EMAIL_VERIFICATION_SUCCESS": {
+      "TITLE": "Super! Du hast es fast geschafft!",
+      "MESSAGE": "Wir haben dir noch einmal einen Link für die Kontoaktivierung gesendet. Bitte prüfe dein E-Mail-Postfach. Es kann bis zu 10 Minuten dauern bis dich die E-Mail erreicht."
+    },
+    "SIGNUP": {
+      "DESCRIPTION": "Du hast noch keinen Zugang/Konto?",
+      "LINK": "Dann registriere Dich jetzt"
+    }
+  },
+  "SIGNUP": {
+    "PAGE_TITLE": "Willkommen zum Office Check-in",
+    "PAGE_DESCRIPTION": "Schön, dass Du Deinen Büro-Tag vorausschauend planen möchtest. Um Deinen Büro-Tag zu buchen, lege zunächst ein Konto für Dich an.",
+    "FORM": {
+      "TITLE_MEMBER": "Bitte als Team Mitglied anmelden",
+      "TITLE_MANAGER": "Bitte als Team Manager anmelden",
+      "FIELDS": {
+        "TEAMNAME": {
+          "LABEL": "Teamname",
+          "PLACEHOLDER": "Bitte gib einen Namen für Dein Team ein.",
+          "ERROR": "Bitte gib einen gültigen Namen ein."
+        },
+        "TEAMROLE": {
+          "LABEL": "Teamrolle",
+          "PLACEHOLDER": "Bitte beschreibe kurz deine Rolle / Verantwortung im Teams.",
+          "ERROR": "Bitte gib eine gültige Beschreibung ein."
+        },
+        "EMAIL": {
+          "LABEL": "E-Mail-Adresse",
+          "ERROR": "Bitte eine gültige E-Mail-Adresse eingeben."
+        },
+        "PASSWORD": {
+          "LABEL": "Passwort",
+          "ERROR": "Bitte Passwort eingeben"
+        },
+        "PASSWORD_CONFIRM": {
+          "LABEL": "Passwort bestätigen",
+          "ERROR": "Bitte Passwort erneut eingeben"
+        }
+      },
+      "BUTTONS": {
+        "SIGNUP": {
+          "TITLE": "Registrieren"
+        }
+      }
+    },
+    "ERRORS": {
+      "TITLE": "Registrierung fehlgeschlagen!",
+      "UNKNOWN": "Ein Fehler ist bei der Registrierung aufgetreten.",
+      "PASSWORD_TOO_WEAK": "Dein Passwort ist zu unsicher. Bitte gebe ein neues an.",
+      "EMAIL_IN_USE": "Dieses E-Mail wird bereits verwendet.",
+      "EMAIL_INVALID": "Bitte eine gültige E-Mail Adresse eingeben."
+    },
+    "SUCCESS": {
+      "TITLE": "Toll! Fast geschafft!",
+      "MESSAGE": "Du hast dich erfolgreich im Office Check-in registriert. Wir haben Dir einen Bestätigungslink per Mail gesendet. Bitte prüfe deinen Posteingang. Es kann einige Minuten dauern bis die E-Mail angekommen ist."
+    },
+    "LOGIN": {
+      "DESCRIPTION": "Du hast bereits ein Konto?",
+      "LINK": "Melde Dich hier an"
+    }
+  },
+  "SIGNUP_SELECT": {
+    "PAGE_TITLE": "Willkommen zum Office Check-in",
+    "PAGE_DESCRIPTION": "Schön, dass Du Deinen Büro-Tag vorausschauend planen möchtest. Um Deinen Büro-Tag zu buchen, lege zunächst ein Konto für Dich an.",
+    "NAVIGATION": {
+      "TITLE": "Bitte wähle die Registrierung für Deine Rolle",
+      "LINKS": {
+        "MEMBER": {
+          "PREFIX": "Registrieren als",
+          "TITLE": "Team Mitglied",
+          "HINT": "Als Team Mitglied kannst Du Büro-Tag Buchungen in einer Deiner verfügbaren Teamflächen vornehmen."
+        },
+        "MANAGER": {
+          "PREFIX": "Registrieren als",
+          "TITLE": "Team Manager",
+          "HINT": "Als Team Manager kannst Du zusätzlich eine neue Teamfläche für Dein Team erstellen und Team Mitglieder zu Deiner Teamfläche einladen."
+        }
+      }
+    },
+    "DIALOGS": {
+      "HINT": {
+        "MEMBER": {
+          "TITLE": "Team Mitglied Rolle",
+          "MESSAGE": "Als Team Mitglied kannst Du Büro-Tag Buchungen in einer Deiner verfügbaren Teamflächen vornehmen"
+        },
+        "MANAGER": {
+          "TITLE": "Team Manager Rolle",
+          "MESSAGE": "Als Team Manager kannst Du zusätzlich eine neue Teamfläche für Dein Team erstellen und Team Mitglieder zu Deiner Teamfläche einladen."
+        }
+      }
+    }
+  },
+  "PASSWORD_RESET": {
+    "PAGE_TITLE": "Stelle Deinen Zugang wieder her",
+    "PAGE_DESCRIPTION": "Wenn Du Dein Passwort vergessen hast oder dich nicht mehr anmelden kannst, setze Dein Passwort hier zurück.",
+    "FORM": {
+      "TITLE": "Bitte gib deine E-Mail-Adresse ein",
+      "FIELDS": {
+        "EMAIL": {
+          "LABEL": "E-Mail-Adresse",
+          "ERROR": "Bitte eine gültige E-Mail-Adresse eingeben."
+        }
+      },
+      "BUTTONS": {
+        "RESET": {
+          "TITLE": "Password zurücksetzen"
+        }
+      }
+    },
+    "ERRORS": {
+      "TITLE": "Password zurücksetzen fehlgeschlagen!",
+      "UNKNOWN": "Bitte versuche das Zurücksetzen deines Passwortes später erneut.",
+      "EMAIL_INVALID": "Bitte gib eine gültige E-Mail-Adresse ein."
+    },
+    "SUCCESS": {
+      "TITLE": "Password zurücksetzen gestartet!",
+      "MESSAGE": "In den nächsten Minuten erhälst du eine E-Mail mit weiteren Informationen für das Zurücksetzen deines Passwortes."
+    },
+    "LOGIN": {
+      "LINK": "Zur Anmeldung"
+    }
+  },
+  "BOOKINGS": {
+    "LIST": {
+      "PAGE_TITLE": "Schön Dich wieder zu sehen",
+      "PAGE_DESCRIPTION": "Achte auf Dich und deine Kollegen. <strong>Bleib gesund!</strong>",
+      "INFO_NO_BOOKING_ITEMS": "Keine Buchungen bisher.",
+      "TABLE": {
+        "HEADER": {
+          "CHECK_IN_DATE": "Check in",
+          "AREA": "Teamfläche",
+          "PRESENCE": "Anwesenheit (inkl. Deiner Buchung)",
+          "ACTION": "Aktion"
+        },
+        "ACTION": {
+          "DELETE_BOOKING": "Buchung löschen",
+          "DELETE_BOOKING_CONF": "Deine Buchung wurde erfolgreich gelöscht."
+        }
+      }
+    },
+    "ADD": {
+      "PAGE_TITLE": "Buche deinen Tag im Büro",
+      "PAGE_DESCRIPTION": "Wähle für Deine Reservierung zunächst Deine Teamfläche aus. Je nach Auswahl werden Dir die dafür verfügbaren Tage angezeigt.",
+      "INFO_NO_AREAS_JOINED": "Du bist noch keiner Fläche beigetreten.",
+      "FORM": {
+        "FIELDS": {
+          "AREA": {
+            "TITLE": "Teamfläche auswählen",
+            "ERROR": "Bitte wähle deine Teamfläche aus."
+          },
+          "DATE": {
+            "TITLE": "Datum auswählen",
+            "LABEL": "Gib ein Datum ein oder wähle es im Kalender",
+            "HINT": "Eingabe im Format: DD.MM.YY",
+            "HINT_2": "noch wählbar",
+            "ERROR": "Bitte wähle ein Datum aus."
+          }
+        }
+      },
+      "ERRORS": {
+        "ERROR_SEAT": "Leider kann diesen Platz nicht gebucht werden!",
+        "AREA_BOOKED": "Die Teamfläche ist für diesen Tag bereits ausgebucht!",
+        "DAY_BOOKED": "Du hast für diesen Tag bereits eine andere Buchung!",
+        "BOOK_ERROR": "Buchungsfehler!",
+        "DELETE_BOOKING_TITLE": "Löschen fehlgeschlagen.",
+        "DELETE_BOOKING_MESSAGE": "Buchung kann nicht gelöscht werden."
+      },
+      "DIALOG": {
+        "SUCCESS": {
+          "TITLE": "Perfekt",
+          "MESSAGE": "Deine Buchung ist erfolgreich!"
+        },
+        "CONFIRMATION": {
+          "TITLE": "Reservierung löschen",
+          "MESSAGE": "Willst du die ausgewählte Reservierung sicher löschen?"
+        }
+      },
+      "BUTTONS": {
+        "OPEN_CALENDAR": {
+          "TITLE": "Kalender anzeigen"
+        },
+        "ADD_BOOKING": {
+          "TITLE": "Office Buchung bestätigen"
+        }
+      }
+    }
+  },
+  "AREAS": {
+    "LIST": {
+      "NO_MANAGER_REQUEST_MANAGER": "Du bist zurzeit nicht als Team Manager registriert und kannst deswegen keine neuen Teamfächen erstellen. Klicke auf dem Button unten um deine Rolle zu wechseln!",
+      "BECOME_TEAM_MANAGER": "Zu Team-Manager Rolle wechseln!",
+      "BECAME_TEAM_MANAGER": "Du hast jetzt die Team-Manager Rolle!",
+      "PAGE_TITLE": "Meine Teamflächen",
+      "PAGE_DESCRIPTION": "Team-Manager und Administratoren können Team-Mitglieder über den Einladungs-Link einladen.",
+      "INFO_NO_BOOKING_ITEMS": "Noch keine Flächen vorhanden.",
+      "JOIN_LINK_COPIED": "Join-Link kopiert",
+      "MANAGED_AREAS": {
+        "TITLE": "Deine erstellten Teamflächen",
+        "TABLE": {
+          "HEADER": {
+            "AREA": "Teamfläche",
+            "CAPACITY": "Kapazität",
+            "ACTION": "Aktion"
+          }
+        },
+        "BUTTONS": {
+          "CREATE_TEAM_AREA": {
+            "TITLE": "Neue Teamfläche"
+          }
+        }
+      },
+      "JOINED_AREAS": {
+        "TITLE": "Deine verfügbaren Teamflächen",
+        "TABLE": {
+          "HEADER": {
+            "AREA": "Teamfläche"
+          }
+        }
+      }
+    },
+    "DELETE": {
+      "DIALOG": {
+        "CONFIRMATION": {
+          "TITLE": "Teamfläche löschen",
+          "MESSAGE": "Bist du sicher? Möchtest du diese Teamfläche wirklich löschen? Dieser Schritt kann nicht rückgängig gemacht werden"
+        }
+      },
+      "TOAST": {
+        "SUCCESS": "Teamfläche {{name}} wurde erfolgreich gelöscht.",
+        "FAILURE": "Beim Löschen ist ein Fehler aufgetreten. '{{message}}'."
+      }
+    }
+  },
+  "JOIN": {
+    "PAGE_TITLE": "Teamfläche beitreten.",
+    "PAGE_DESCRIPTION": "Willkommen zum Office Check-in. Du wirst einer neuen Teamfläche per Einladungslink beitreten.",
+    "BUTTONS": {
+      "LOGIN": {
+        "TITLE": "Anmelden"
+      },
+      "MY_AREAS": {
+        "TITLE": "Meine Teamflächen"
+      },
+      "MY_BOOKINGS": {
+        "TITLE": "Meine Buchungen"
+      }
+    },
+    "STEPS": {
+      "CHECK_USER": {
+        "TEXT": "Fläche beitreten"
+      },
+      "NOT_AUTHORIZED": {
+        "TEXT": "Du musst eingeloggt sein um einer Fläche beitreten zu können."
+      },
+      "JOIN_AREA": {
+        "TEXT": "Fläche beitreten "
+      },
+      "NOT_FOUND": {
+        "TEXT": "Diese Fläche existiert nicht."
+      },
+      "JOIN_AREA_SUCCEEDED": {
+        "TEXT": "Erfolgreich beigetreten."
+      },
+      "ERROR": {
+        "TEXT": "Fläche konnte nicht beigetreten werden. Bitte versuche es später erneut."
+      }
+    }
+  },
+  "INVITE_AREA_MEMBERS": {
+    "PAGE_TITLE": "Lade Teammitglieder ein.",
+    "PAGE_DESCRIPTION": "Über den Link können Deine Teammitglieder der Teamfläche beitreten.",
+    "INVITE_DESCRIPTION": "Teile den folgenden Link mit Deinen Teammitgliedern (z. B. per E-Mail), damit diese der Teamfläche beitreten können.<br><br>Wenn Du ebenfalls Buchungen für die Fläche durchführen willst nutze bitte ebenfalls den Link."
+  },
+  "CREATE_AREA": {
+    "PAGE_TITLE": "Neue Teamfläche",
+    "PAGE_DESCRIPTION": "Team Managers können neue Teamflächen erstellen. Erstelle für Deine neue Teamfläche einen entsprechenden Namen, eine Adresse und die maximale Anzahl der Mitarbeiter (Kapazität).",
+    "FORM": {
+      "TITLE": "Details Teamfläche",
+      "FIELDS": {
+        "NAME": {
+          "LABEL": "Name Teamfläche",
+          "PLACEHOLDER": "Bsp. Brüsseler Platz H1.100",
+          "ERROR": "Bitte einen Namen eingeben"
+        },
+        "CAPACITY": {
+          "LABEL": "Kapazität",
+          "PLACEHOLDER": "max. Kapazität der Fläche",
+          "ERROR": "Bitte eine Kapazität eingeben"
+        },
+        "ADDRESS": {
+          "LABEL": "Adresse",
+          "PLACEHOLDER": "Bsp. Brüsseler Platz 1, 45131 Essen",
+          "ERROR": "Bitte eine Adresse eingeben"
+        }
+      }
+    },
+    "BUTTONS": {
+      "CREATE": {
+        "TITLE": "Neue Teamfläche"
+      },
+      "INVITE": {
+        "TITLE": "Mitglieder einladen"
+      }
+    },
+    "DIALOGS": {
+      "CREATED": {
+        "TITLE": "Perfekt!",
+        "MESSAGE": "Du hast die neue Teamfläche erfolgreich erstellt."
+      },
+      "NAME_EXISTS": {
+        "TITLE": "Teamfläche erstellen fehlgeschlagen!",
+        "MESSAGE": "Diese Teamfläche Bezeichnung ist bereits vergeben. Bitte wähle einen neuen Namen."
+      },
+      "ERROR": {
+        "TITLE": "Teamfläche erstellen fehlgeschlagen!",
+        "MESSAGE": "Die Teamfläche konnte nicht erstellt werden. Bitte probiere es später erneut aus."
+      }
+    }
+  },
+  "EDIT_AREA": {
+    "PAGE_TITLE": "Teamfläche bearbeiten",
+    "PAGE_DESCRIPTION": "Als Manager können Sie hier Ihre Teamflächen bearbeiten.",
+    "BUTTONS": {
+      "SAVE": {
+        "TITLE": "Änderungen speichern"
+      }
+    },
+    "FORM": {
+      "TITLE": "Details Teamfläche",
+      "FIELDS": {
+        "NAME": {
+          "LABEL": "Name Teamfläche",
+          "PLACEHOLDER": "Bsp. Brüsseler Platz H1.100",
+          "ERROR": "Bitte einen Namen eingeben"
+        },
+        "CAPACITY": {
+          "LABEL": "Kapazität",
+          "PLACEHOLDER": "max. Kapazität der Fläche",
+          "ERROR": "Bitte eine Kapazität eingeben"
+        },
+        "ADDRESS": {
+          "LABEL": "Adresse",
+          "PLACEHOLDER": "Bsp. Brüsseler Platz 1, 45131 Essen",
+          "ERROR": "Bitte eine Adresse eingeben"
+        }
+      }
+    },
+    "DIALOGS": {
+      "SUCCESS": {
+        "TITLE": "Super",
+        "MESSAGE": "Du hast deine Teamfläche bearbeitet."
+      },
+      "ERROR": {
+        "TITLE": "Fehler",
+        "MESSAGE": "Bearbeiten der Teamfläche ist fehlgeschlagen."
+      }
+    }
+  },
+  "USER_PROFILE": {
+    "PAGE_TITLE": "Profileinstellungen",
+    "PAGE_DESCRIPTION": "Nimm Deine Einstellungen vor: Du kannst Deinen Vor- und Nachnamen hinzufügen, der dann statt Deiner E-Mail-Adresse angezeigt wird. Außerdem kannst du zustimmen, dass Deine persönlichen Daten (z. B. Dein Name) in den Buchungen für andere sichtbar ist.",
+    "FORM": {
+      "TITLE": "Deine Profil Informationen",
+      "FIELDS": {
+        "EMAIL": {
+          "LABEL": "E-Mail-Adresse"
+        },
+        "FIRSTNAME": {
+          "LABEL": "Vorname",
+          "ERROR": "Bitte gib einen gültigen Namen ein."
+        },
+        "LASTNAME": {
+          "LABEL": "Nachname",
+          "ERROR": "Bitte gib einen gültigen Namen ein."
+        },
+        "DATA_PRIVACY_AGREEMENT": {
+          "LABEL": "Ich stimme zu, dass meine persönlichen Daten für andere in den Buchungen sichtbar sind."
+        }
+      }
+    },
+    "DIALOGS": {
+      "SUCCESS": {
+        "TITLE": "Prima!",
+        "MESSAGE": "Du hast Dein Profil erfolgreich aktualisiert!"
+      },
+      "ERROR": {
+        "TITLE": "Fehler!",
+        "MESSAGE": "Leider ist beim Speichern deiner Daten etwas schiefgelaufen."
+      }
+    },
+    "MY_BOOKINGS": {
+      "LINK": "Zurück zu Buchungen"
+    }
+  },
+  "POST_BOOKING": {
+    "PAGE_TITLE": "Wie schützen wir uns und unsere Kollegen?",
+    "PAGE_DESCRIPTION": "Wenn Du mit Office Check-in Deinen Tag im Büro gebucht hast, achte bitte auf Deine Gesundheit und beschütze Deine Kollegen indem du die folgenden Maßnahmen gegen die Verbreitung von COVID-19 befolgst:",
+    "FORM": {
+      "PROTECT_WASH_TITLE": "Händehygiene",
+      "PROTECT_WASH_INFO": "Wash your hands image",
+      "PROTECT_DIST_TITLE": "Abstand halten",
+      "PROTECT_DIST_INFO": "Keep distance image",
+      "PROTECT_HAND_TITLE": "Keine Händeschütteln",
+      "PROTECT_HAND_INFO": "No hand shaking image",
+      "FURTHER_DETAILS": "Für weitere Details stehen die Konzepte zur Verfügung:",
+      "LOCATION": "Standortkonzepte",
+      "CONTACT": "deines Standortes, oder kontaktiere ",
+      "CONTACT_TITLE": "Krisenmanagement",
+      "BACK_BUTTON": "Zurück zu Buchungen"
+    }
+  }
+}

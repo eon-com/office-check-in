@@ -1,0 +1,42 @@
+<app-page>
+  <h2>{{'LOGIN.PAGE_TITLE' | translate}}</h2>
+
+  <p>{{'LOGIN.PAGE_DESCRIPTION' | translate}}</p>
+
+  <div class="flex">
+    <div class="flex-small-content">
+      <h3 class="margin-top">{{'LOGIN.FORM.TITLE' | translate}}</h3>
+      <form class="margin-top" [formGroup]="loginForm" #ngForm="ngForm" (submit)="login()" autocomplete="off">
+        <mat-form-field appearance="outline">
+          <mat-label>{{'LOGIN.FORM.FIELDS.EMAIL.LABEL' | translate}}</mat-label>
+          <input matInput name="email" placeholder="{{'LOGIN.FORM.FIELDS.EMAIL.LABEL' | translate}}"
+                 formControlName="email" aria-required="true">
+          <mat-error *ngIf="form.email.invalid && (form.email.touched || ngForm.submitted)">
+            {{'LOGIN.FORM.FIELDS.EMAIL.ERROR' | translate}}
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>{{'LOGIN.FORM.FIELDS.PASSWORD.LABEL' | translate}}</mat-label>
+          <input matInput name="password" type="password"
+                 placeholder="{{'LOGIN.FORM.FIELDS.PASSWORD.LABEL' | translate}}"
+                 formControlName="password" aria-required="true">
+          <mat-error *ngIf="form.password.invalid && (form.password.touched || ngForm.submitted)">
+            {{'LOGIN.FORM.FIELDS.PASSWORD.ERROR' | translate}}
+          </mat-error>
+        </mat-form-field>
+
+        <div class="margin-bottom text-align-right">
+          <a [routerLink]="Navigation.PASSWORD_RESET"><span>{{'LOGIN.PASSWORD_RECOVERY_LINK' | translate}}</span></a>
+        </div>
+
+        <mat-spinner-button [options]="loginBtnOptions" [disabled]="loginForm.invalid"></mat-spinner-button>
+
+        <div class="margin-top">
+          {{'LOGIN.SIGNUP.DESCRIPTION' | translate}} <a
+          [routerLink]="Navigation.SIGNUP"><span>{{'LOGIN.SIGNUP.LINK' | translate}}</span></a>
+        </div>
+      </form>
+    </div>
+  </div>
+</app-page>

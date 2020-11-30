@@ -1,0 +1,32 @@
+<div class="content">
+  <h1>{{'SIDEBAR.MAIN.TITLE' | translate}}</h1>
+
+  <div class="user" *ngIf="user$ | async as user">
+    <app-avatar [name]="user.printName" aria-hidden="true"></app-avatar>
+    <span class="flex-nogrow">{{user.toString()}}</span>
+  </div>
+
+  <button mat-raised-button color="primary" close-sidebar (click)="addBooking()" class="margin-top margin-bottom">
+    <mat-icon svgIcon="plus"></mat-icon>
+    {{'SIDEBAR.MAIN.BUTTONS.ADD_BOOKING.TITLE' | translate}}
+  </button>
+
+  <nav class="menu margin-top margin-bottom">
+    <ul>
+      <li>
+        <a [routerLink]="Navigation.BOOKINGS" routerLinkActive="active" close-sidebar>
+          <mat-icon svgIcon="calendar-range"></mat-icon>
+          <span>{{'SIDEBAR.MAIN.NAV.MY_BOOKINGS.TITLE' | translate}}</span>
+        </a>
+      </li>
+      <li>
+        <a [routerLink]="Navigation.AREAS" routerLinkActive="active" close-sidebar>
+          <mat-icon svgIcon="tooltip-account"></mat-icon>
+          <span>{{'SIDEBAR.MAIN.NAV.MY_AREAS.TITLE' | translate}}</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <app-sidebar-footer></app-sidebar-footer>
+</div>

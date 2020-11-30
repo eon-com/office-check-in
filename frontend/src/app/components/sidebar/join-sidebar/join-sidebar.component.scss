@@ -1,0 +1,9 @@
+@import "mixins/sidebar";
+
+:host {
+  @include sidebar-background();
+
+  .content {
+    @include sidebar-content();
+  }
+}

@@ -1,0 +1,115 @@
+<app-page>
+  <h2>{{'AREAS.LIST.PAGE_TITLE' | translate}}</h2>
+
+  <p>{{'AREAS.LIST.PAGE_DESCRIPTION' | translate}}</p>
+
+  <mat-menu #areaActionsMenu="matMenu" xPosition="before" class="area-menu">
+    <ng-template matMenuContent let-element="element">
+      <ul class="menu-list">
+        <li tabindex="1">
+          <button mat-menu-item
+                  (click)="copyJoinLink(element)"
+                  [matTooltip]="'COMMON.BUTTONS.COPY_JOIN_LINK' | translate"
+                  [attr.aria-label]="'COMMON.BUTTONS.COPY_JOIN_LINK' | translate">
+            <mat-icon svgIcon="content-copy" color="accent"></mat-icon>
+            &nbsp;{{'COMMON.BUTTONS.COPY_JOIN_LINK' | translate}}
+          </button>
+        </li>
+        <li tabindex="2">
+          <button mat-menu-item
+                  (click)="navigateToEditArea(element)"
+                  [matTooltip]="'COMMON.BUTTONS.EDIT_AREA' | translate"
+                  [attr.aria-label]="'COMMON.BUTTONS.EDIT_AREA' | translate">
+            <mat-icon svgIcon="pencil" color="accent"></mat-icon>
+            &nbsp;{{'COMMON.BUTTONS.EDIT_AREA' | translate}}
+          </button>
+        </li>
+        <li tabindex="3">
+          <button mat-menu-item
+                  (click)="deleteArea(element)"
+                  [matTooltip]="'COMMON.BUTTONS.DELETE_AREA' | translate"
+                  [attr.aria-label]="'COMMON.BUTTONS.DELETE_AREA' | translate">
+            <mat-icon svgIcon="delete" color="accent"></mat-icon>
+            &nbsp;{{'COMMON.BUTTONS.DELETE_AREA' | translate}}
+          </button>
+        </li>
+      </ul>
+    </ng-template>
+  </mat-menu>
+  <div *ngIf="isManager == false">
+    <p>
+      {{'AREAS.LIST.NO_MANAGER_REQUEST_MANAGER' | translate}}</p>
+    <p>
+      <button mat-raised-button color="primary"
+              (click)="becomeTeamManager()">{{'AREAS.LIST.BECOME_TEAM_MANAGER' | translate}}</button>
+    </p>
+  </div>
+  <div *ngIf="isManager && managedDataSource">
+    <h3 class="margin-top">{{'AREAS.LIST.MANAGED_AREAS.TITLE' | translate}}</h3>
+    <div *ngIf="managedDataSource && managedDataSource.length > 0">
+      <table mat-table [dataSource]="managedDataSource">
+
+        <!-- Area name Column -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef>{{'AREAS.LIST.MANAGED_AREAS.TABLE.HEADER.AREA' | translate}}</th>
+          <td mat-cell *matCellDef="let element" class="strong"> {{element.locationName }} </td>
+        </ng-container>
+
+        <!-- Area capacity Column -->
+        <ng-container matColumnDef="capacity">
+          <th mat-header-cell *matHeaderCellDef>{{'AREAS.LIST.MANAGED_AREAS.TABLE.HEADER.CAPACITY' | translate}}</th>
+          <td mat-cell *matCellDef="let element"> {{element.capacity}} </td>
+        </ng-container>
+
+        <!-- Area actions Column -->
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef
+              class="text-align-right">{{'AREAS.LIST.MANAGED_AREAS.TABLE.HEADER.ACTION' | translate}}</th>
+          <td mat-cell *matCellDef="let element" class="text-align-right">
+            <button mat-icon-button color="primary"
+                    [matMenuTriggerFor]="areaActionsMenu"
+                    [matMenuTriggerData]="{'element': element}"
+                    [matTooltip]="'COMMON.BUTTONS.AREA_ACTIONS' | translate"
+                    [attr.aria-label]="'COMMON.BUTTONS.AREA_ACTIONS' | translate">
+              <mat-icon svgIcon="dots-vertical" color="accent" *ngIf="!spinningElements.has(element.id)"></mat-icon>
+              <mat-spinner color="primary" diameter="24" *ngIf="spinningElements.has(element.id)"></mat-spinner>
+            </button>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="managedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: managedColumns;"></tr>
+      </table>
+    </div>
+    <div class="mat-button-container">
+      <button mat-stroked-button (click)="addArea()" class="margin-top margin-bottom" color="secondary"
+              [attr.aria-label]="'AREAS.LIST.MANAGED_AREAS.BUTTONS.CREATE_TEAM_AREA.TITLE' | translate">
+        <mat-icon svgIcon="plus"></mat-icon>
+        {{'AREAS.LIST.MANAGED_AREAS.BUTTONS.CREATE_TEAM_AREA.TITLE' | translate}}
+      </button>
+    </div>
+  </div>
+
+  <div>
+    <h3 class="margin-top">{{'AREAS.LIST.JOINED_AREAS.TITLE' | translate}}</h3>
+    <div *ngIf="joinedDataSource && joinedDataSource.length > 0">
+      <table mat-table [dataSource]="joinedDataSource">
+
+        <!-- Joined area name Column -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef>{{'AREAS.LIST.JOINED_AREAS.TABLE.HEADER.AREA' | translate}}</th>
+          <td mat-cell *matCellDef="let element" class="strong"> {{element.locationName}} </td>
+        </ng-container>
+
+        <!-- Joined area capacity Column -->
+        <ng-container matColumnDef="capacity">
+          <th mat-header-cell *matHeaderCellDef>{{'AREAS.LIST.MANAGED_AREAS.TABLE.HEADER.CAPACITY' | translate}}</th>
+          <td mat-cell *matCellDef="let element"> {{element.capacity}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="joinedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: joinedColumns;"></tr>
+      </table>
+    </div>
+  </div>
+</app-page>

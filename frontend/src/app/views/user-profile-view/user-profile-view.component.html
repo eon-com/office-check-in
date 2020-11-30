@@ -1,0 +1,51 @@
+<app-page>
+  <h2>{{'USER_PROFILE.PAGE_TITLE' | translate}}</h2>
+
+  <p>{{'USER_PROFILE.PAGE_DESCRIPTION' | translate}}</p>
+
+  <div class="flex" *ngIf="userProfileForm">
+    <h3 class="margin-top">{{'USER_PROFILE.FORM.TITLE' | translate}}</h3>
+    <form [formGroup]="userProfileForm" class="flex flex-full margin-top" (submit)="save()">
+      <mat-form-field appearance="outline">
+        <mat-label>{{'USER_PROFILE.FORM.FIELDS.EMAIL.LABEL' | translate}}</mat-label>
+        <input matInput name="email" aria-required="true" formControlName="email">
+      </mat-form-field>
+
+      <div class="flex flex-row">
+        <mat-form-field appearance="outline">
+          <mat-label>{{'USER_PROFILE.FORM.FIELDS.FIRSTNAME.LABEL' | translate}}</mat-label>
+          <input matInput name="firstname" formControlName="firstname">
+          <mat-error *ngIf="fieldIsInvalid('firstname')">
+            {{'USER_PROFILE.FORM.FIELDS.FIRSTNAME.ERROR' | translate}}
+          </mat-error>
+        </mat-form-field>
+
+        <div class="flex-space"></div>
+
+        <mat-form-field appearance="outline">
+          <mat-label>{{'USER_PROFILE.FORM.FIELDS.LASTNAME.LABEL' | translate}}</mat-label>
+          <input matInput name="lastname" formControlName="lastname">
+          <mat-error *ngIf="fieldIsInvalid('lastname')">
+            {{'USER_PROFILE.FORM.FIELDS.LASTNAME.ERROR' | translate}}
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <mat-checkbox class="margin-top" formControlName="dataPrivacy" color="primary">
+        {{'USER_PROFILE.FORM.FIELDS.DATA_PRIVACY_AGREEMENT.LABEL' | translate}}</mat-checkbox>
+
+      <div class="text-align-right margin-top">
+        <mat-spinner-button [options]="saveBtnOptions" [disabled]="userProfileForm.invalid"></mat-spinner-button>
+      </div>
+    </form>
+
+    <div class="flex-space"></div>
+
+    <div class="margin-top">
+      <a [routerLink]="Navigation.BOOKINGS" class="icon-link">
+        <mat-icon svgIcon="arrow-left"></mat-icon>
+        <span>{{'USER_PROFILE.MY_BOOKINGS.LINK' | translate}}</span>
+      </a>
+    </div>
+  </div>
+</app-page>

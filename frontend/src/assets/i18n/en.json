@@ -1,0 +1,546 @@
+{
+  "APP_TITLE": "Office Check-in",
+  "COMMON": {
+    "BUTTONS": {
+      "OK": "OK",
+      "CANCEL": "Cancel",
+      "NEXT_STEP": "Next step",
+      "PREVIOUS_STEP": "Previous step",
+      "CLOSE": "Close",
+      "DELETE": "Delete",
+      "COPY_JOIN_LINK": "Copy join link to clipboard",
+      "BACK_BUTTON": {
+        "LOGIN": "Back to login",
+        "AREAS": "Back to My Team Areas",
+        "SIGNUP_ROLE_SELECT": "Back to role selection"
+      },
+      "EDIT_AREA": "Edit area",
+      "AREA_ACTIONS": "Area actions",
+      "SAVE_CHANGES": "Save changes",
+      "DELETE_AREA": "Delete area"
+    },
+    "LANGUAGES": {
+      "DE": "German",
+      "EN": "English"
+    },
+    "FORM": {
+      "FIELDS": {
+        "PASSWORD": {
+          "LABEL": "Password",
+          "ERROR": "Please enter a valid and secure password.",
+          "HINT": {
+            "TITLE": "Passwort information",
+            "MESSAGE": "Your password must match this criteria:<ul><li>Min. 1 lowercase letter<li>Min. 1 uppercase letter<li>Min. 1 special character<li>Min. 1 number<li>Min. 8 characters long</ul>"
+          }
+        },
+        "PASSWORD_CONFIRM": {
+          "LABEL": "Confirm Password",
+          "ERROR": "The passwords do not match."
+        }
+      }
+    },
+    "LOADING": "Loading...",
+    "NOT_FOUND": "Data not found.",
+    "NOT_AUTHORIZED": "Not authorized.",
+    "DATA_LOAD_ERROR": "Error while loading your data."
+  },
+  "COMPONENTS": {
+    "JOIN_AREA_DIALOG_MESSAGE": {
+      "CAPACITY": "Size: {{capacity}}",
+      "ADDRESS": "{{address}}"
+    },
+    "LANGUAGE_SELECTOR": {
+      "CHANGE_LANGUAGE": "Change language"
+    }
+  },
+  "DIALOGS": {
+    "JOIN_AREA": {
+      "TITLE": "Congratulation!",
+      "MESSAGE": "You successfully joined the team area."
+    }
+  },
+  "SIDEBAR": {
+    "GENERAL": {
+      "SUPPORT": "Help & Support",
+      "ABOUT": "About d lab_"
+    },
+    "LOGIN": {
+      "TITLE": "Sign in"
+    },
+    "SIGNUP": {
+      "TITLE": "Register"
+    },
+    "PASSWORD_RESET": {
+      "TITLE": "Password reset"
+    },
+    "MAIN": {
+      "TITLE": "Hello",
+      "BUTTONS": {
+        "ADD_BOOKING": {
+          "TITLE": "Add booking"
+        },
+        "SIGNOUT": {
+          "TITLE": "Logout"
+        }
+      },
+      "NAV": {
+        "MY_BOOKINGS.TITLE": "My bookings",
+        "MY_AREAS.TITLE": "My team areas",
+        "MY_PROFILE.TITLE": "My profile settings"
+      }
+    },
+    "JOIN": {
+      "TITLE": "Join Area",
+      "BUTTONS": {
+        "SIGNOUT": {
+          "TITLE": "Logout"
+        }
+      }
+    }
+  },
+  "LOGIN": {
+    "PAGE_TITLE": "Your office is full?",
+    "PAGE_DESCRIPTION": "That’s not good in these COVID-19 times. But we have created the Office Check-in. The tool to manage your stays on site at the office. Book your office day now!",
+    "FORM": {
+      "TITLE": "Sign in",
+      "FIELDS": {
+        "EMAIL": {
+          "LABEL": "Email address",
+          "ERROR": "Please enter a valid email address"
+        },
+        "PASSWORD": {
+          "LABEL": "Password",
+          "ERROR": "Please enter your password"
+        }
+      },
+      "BUTTONS": {
+        "LOGIN": {
+          "TITLE": "Login"
+        }
+      }
+    },
+    "PASSWORD_RECOVERY_LINK": "Forgot password?",
+    "ERRORS": {
+      "TITLE": "Login failed!",
+      "UNKNOWN": "An error occurred during login.",
+      "WRONG_CREDENTIALS": "You entered a wrong email address or password.",
+      "USER_NOT_VERIFIED": "Please verify your user account first. You should have received an email with a confirmation link.",
+      "TOO_MANY_REQUESTS": "Too many wrong login attempts. Please try again in a few minutes.",
+      "RESEND_EMAIL_VERIFICATION": "Resend verification email"
+    },
+    "RESEND_EMAIL_VERIFICATION_SUCCESS": {
+      "TITLE": "Great! You almost made it!",
+      "MESSAGE": "We’ve sent you a link to confirm your email address again. Please check your inbox. It could take up to 10 minutes to show up in your inbox."
+    },
+    "SIGNUP": {
+      "DESCRIPTION": "Don't have an account?",
+      "LINK": "Register now"
+    }
+  },
+  "SIGNUP": {
+    "PAGE_TITLE": "Welcome to Office Check-in",
+    "PAGE_DESCRIPTION": "Nice that you also want to plan your office day with foresight. Create your account to book your office day now!",
+    "FORM": {
+      "TITLE_MEMBER": "Please register as team member",
+      "TITLE_MANAGER": "Please register as team manager",
+      "FIELDS": {
+        "TEAMNAME": {
+          "LABEL": "Team name",
+          "PLACEHOLDER": "Please enter the name of your team.",
+          "ERROR": "Please enter a valid team name."
+        },
+        "TEAMROLE": {
+          "LABEL": "Team role",
+          "PLACEHOLDER": "Please describe your role / responsibility in this team shortly.",
+          "ERROR": "Please enter a valid description."
+        },
+        "EMAIL": {
+          "LABEL": "Email address",
+          "ERROR": "Please enter a valid email address."
+        },
+        "PASSWORD": {
+          "LABEL": "Password",
+          "ERROR": "Please enter a valid password.",
+          "HINT": {
+            "TITLE": "Passwort information",
+            "MESSAGE": "Your password must match this criteria:<ul><li>Min. 1 lowercase letter<li>Min. 1 uppercase letter<li>Min. 1 special character<li>Min. 1 number<li>Min. 8 characters long</ul>"
+          }
+        },
+        "PASSWORD_CONFIRM": {
+          "LABEL": "Confirm Password",
+          "ERROR": "The passwords do not match."
+        }
+      },
+      "BUTTONS": {
+        "SIGNUP": {
+          "TITLE": "Register"
+        }
+      }
+    },
+    "ERRORS": {
+      "TITLE": "Registration failed!",
+      "UNKNOWN": "An error occurred during your account registration.",
+      "PASSWORD_TOO_WEAK": "Your password is too weak. Please choose a stronger one.",
+      "EMAIL_IN_USE": "It seems your email is already registered with an account.",
+      "EMAIL_INVALID": "Please enter a valid email address."
+    },
+    "SUCCESS": {
+      "TITLE": "Great! You almost made it!",
+      "MESSAGE": "You’ve successfully registered for Office Check-in. We’ve sent you a link to confirm your email address. Please check your inbox. It could take up to 10 minutes to show up in your inbox."
+    },
+    "LOGIN": {
+      "DESCRIPTION": "Already have an account?",
+      "LINK": "Sign in now"
+    }
+  },
+  "SIGNUP_SELECT": {
+    "PAGE_TITLE": "Welcome to Office Check-in",
+    "PAGE_DESCRIPTION": "Nice that you also want to plan your office day with foresight. Create your account to book your office day now!",
+    "NAVIGATION": {
+      "TITLE": "Please choose your account role",
+      "LINKS": {
+        "MEMBER": {
+          "PREFIX": "Register as",
+          "TITLE": "Team member",
+          "HINT": "As a Team member you are able to book your office days into a team area that you have joined."
+        },
+        "MANAGER": {
+          "PREFIX": "Register as",
+          "TITLE": "Team manager",
+          "HINT": "As a Team manager you are additionally able to create a new team area for your team location and invite team members to join your team area."
+        }
+      }
+    },
+    "DIALOGS": {
+      "HINT": {
+        "MEMBER": {
+          "TITLE": "Team member role",
+          "MESSAGE": "As a Team member you are able to book your office days into a team area that you have joined."
+        },
+        "MANAGER": {
+          "TITLE": "Team manager role",
+          "MESSAGE": "As a Team manager you are additionally able to create a new team area for your team location and invite team members to join your team area."
+        }
+      }
+    }
+  },
+  "PASSWORD_RESET": {
+    "PAGE_TITLE": "Recover your access to Office Check-in",
+    "PAGE_DESCRIPTION": "If you forgot your password or cannot log in anymore you can request a new password here.",
+    "FORM": {
+      "TITLE": "Please fill in your email address",
+      "FIELDS": {
+        "EMAIL": {
+          "LABEL": "Email address",
+          "ERROR": "Please enter a valid email address."
+        }
+      },
+      "BUTTONS": {
+        "RESET": {
+          "TITLE": "Reset password"
+        }
+      }
+    },
+    "ERRORS": {
+      "TITLE": "Password reset failed!",
+      "UNKNOWN": "Please try to reset your password later.",
+      "EMAIL_INVALID": "Please enter a valid email address."
+    },
+    "SUCCESS": {
+      "TITLE": "Password reset started!",
+      "MESSAGE": "You should receive an email with information on how to reset your password within the next minutes."
+    },
+    "LOGIN": {
+      "LINK": "Back to login"
+    }
+  },
+  "BOOKINGS": {
+    "LIST": {
+      "PAGE_TITLE": "Nice to see you again",
+      "PAGE_DESCRIPTION": "Protect yourself and your colleagues. <strong>Stay Healthy!</strong>",
+      "INFO_NO_BOOKING_ITEMS": "No booking items yet.",
+      "TABLE": {
+        "HEADER": {
+          "CHECK_IN_DATE": "Check in",
+          "AREA": "Team area",
+          "PRESENCE": "Presence (incl. your booking)",
+          "ACTION": "Action"
+        },
+        "ACTION": {
+          "DELETE_BOOKING": "Delete booking",
+          "DELETE_BOOKING_CONF": "Your booking has been successfully deleted."
+        }
+      }
+    },
+    "ADD": {
+      "PAGE_TITLE": "Let's book your office day",
+      "PAGE_DESCRIPTION": "Start your booking by choosing your team area. Depending on which team area you choose, the bookable days are displayed.",
+      "INFO_NO_AREAS_JOINED": "You haven't joined an area yet.",
+      "FORM": {
+        "FIELDS": {
+          "AREA": {
+            "TITLE": "Choose team area",
+            "ERROR": "Please choose your team area."
+          },
+          "DATE": {
+            "TITLE": "Choose your check-in date",
+            "LABEL": "Enter a date or select one with the calendar",
+            "HINT": "Enter date in format DD/MM/YY",
+            "HINT_2": "additional dates selectable",
+            "ERROR": "Please choose your check-in date."
+          }
+        }
+      },
+      "ERRORS": {
+        "ERROR_SEAT": "Can't book a seat in this area for you.",
+        "AREA_BOOKED": "Area already fully booked for that day.",
+        "DAY_BOOKED": "You already booked a room for that day.",
+        "BOOK_ERROR": "Booking error",
+        "DELETE_BOOKING_TITLE": "Delete booking failed!",
+        "DELETE_BOOKING_MESSAGE": "Could not delete this booking."
+      },
+      "DIALOG": {
+        "SUCCESS": {
+          "TITLE": "Awesome",
+          "MESSAGE": "You successfully completed your office booking!"
+        },
+        "CONFIRMATION": {
+          "TITLE": "Delete booking",
+          "MESSAGE": "Are you sure you want to delete the selected booking?"
+        }
+      },
+      "BUTTONS": {
+        "OPEN_CALENDAR": {
+          "TITLE": "Open calendar"
+        },
+        "ADD_BOOKING": {
+          "TITLE": "Confirm booking"
+        }
+      }
+    }
+  },
+  "AREAS": {
+    "LIST": {
+      "NO_MANAGER_REQUEST_MANAGER": "You are currently not registered as a team manager and therefore cannot create new team areas yourself. Click below to change your role.",
+      "BECOME_TEAM_MANAGER": "Become team manager now!",
+      "BECAME_TEAM_MANAGER": "You now have the role of team manager",
+      "PAGE_TITLE": "My team areas",
+      "PAGE_DESCRIPTION": "Team managers and admins can invite team members via invitation link.",
+      "INFO_NO_BOOKING_ITEMS": "No team areas joined yet.",
+      "JOIN_LINK_COPIED": "Join link copied to clipboard",
+      "MANAGED_AREAS": {
+        "TITLE": "Your managed areas",
+        "TABLE": {
+          "HEADER": {
+            "AREA": "Team area",
+            "CAPACITY": "Capacity",
+            "ACTION": "Action"
+          }
+        },
+        "BUTTONS": {
+          "CREATE_TEAM_AREA": {
+            "TITLE": "Create new team area"
+          }
+        }
+      },
+      "JOINED_AREAS": {
+        "TITLE": "Your joined areas",
+        "TABLE": {
+          "HEADER": {
+            "AREA": "Team area"
+          }
+        }
+      }
+    },
+    "DELETE": {
+      "DIALOG": {
+        "CONFIRMATION": {
+          "TITLE": "Delete team area",
+          "MESSAGE": "Are you sure? Do you really want to delete this team area? This process cannot be undone"
+        }
+      },
+      "TOAST": {
+        "SUCCESS": "Team area {{name}} successfully deleted.",
+        "FAILURE": "An error occurred while deleting. '{{message}}'."
+      }
+    }
+  },
+  "JOIN": {
+    "PAGE_TITLE": "Join team area",
+    "PAGE_DESCRIPTION": "Welcome to Office Check-In. You are going to join a team area through an invitation link.",
+    "BUTTONS": {
+      "LOGIN": {
+        "TITLE": "Login"
+      },
+      "MY_AREAS": {
+        "TITLE": "My areas"
+      },
+      "MY_BOOKINGS": {
+        "TITLE": "My bookings"
+      }
+    },
+    "STEPS": {
+      "CHECK_USER": {
+        "TEXT": "joining area"
+      },
+      "NOT_AUTHORIZED": {
+        "TEXT": "you must be logged in to join an area"
+      },
+      "JOIN_AREA": {
+        "TEXT": "joining area"
+      },
+      "NOT_FOUND": {
+        "TEXT": "the area does not exists."
+      },
+      "JOIN_AREA_SUCCEEDED": {
+        "TEXT": "successfully joined area."
+      },
+      "ERROR": {
+        "TEXT": "could not join area. please try agan later."
+      }
+    }
+  },
+  "INVITE_AREA_MEMBERS": {
+    "PAGE_TITLE": "Invite team members",
+    "PAGE_DESCRIPTION": "Use the link to allow your team members to join the area.",
+    "INVITE_DESCRIPTION": "Share the following link with your team members (e.g. by email). Your team can join the area by using the link.<br><br>If you want to book on this area, please use the join link as well."
+  },
+  "CREATE_AREA": {
+    "PAGE_TITLE": "New team area",
+    "PAGE_DESCRIPTION": "Team managers can create new team areas. Give your team area a name, an address and a capacity information.",
+    "FORM": {
+      "TITLE": "Team area details",
+      "FIELDS": {
+        "NAME": {
+          "LABEL": "Team area name",
+          "PLACEHOLDER": "e.g. Brüsseler Platz H1.100",
+          "ERROR": "Please enter a team area name"
+        },
+        "CAPACITY": {
+          "LABEL": "Capacity",
+          "PLACEHOLDER": "max. capacity of the area",
+          "ERROR": "Please enter a capacity"
+        },
+        "ADDRESS": {
+          "LABEL": "Address",
+          "PLACEHOLDER": "e.g. Brüsseler Platz 1, 45131 Essen",
+          "ERROR": "Please enter a location address"
+        }
+      }
+    },
+    "BUTTONS": {
+      "CREATE": {
+        "TITLE": "Create team area"
+      },
+      "INVITE": {
+        "TITLE": "Invite members"
+      }
+    },
+    "DIALOGS": {
+      "CREATED": {
+        "TITLE": "Awesome!",
+        "MESSAGE": "You successfully created your team area."
+      },
+      "NAME_EXISTS": {
+        "TITLE": "Create Team Area failed!",
+        "MESSAGE": "This team area name is already in usage. Please choose a new name."
+      },
+      "ERROR": {
+        "TITLE": "Create Team Area failed!",
+        "MESSAGE": "Could not create the team area. Please try again later."
+      }
+    }
+  },
+  "EDIT_AREA": {
+    "PAGE_TITLE": "Edit team area",
+    "PAGE_DESCRIPTION": "As a manager, you can change the capacity and address of your team areas.",
+    "BUTTONS": {
+      "SAVE": {
+        "TITLE": "Save changes"
+      }
+    },
+    "FORM": {
+      "TITLE": "Team area details",
+      "FIELDS": {
+        "NAME": {
+          "LABEL": "Team area name",
+          "PLACEHOLDER": "e.g. Brüsseler Platz H1.100",
+          "ERROR": "Please enter a team area name"
+        },
+        "CAPACITY": {
+          "LABEL": "Capacity",
+          "PLACEHOLDER": "max. capacity of your area",
+          "ERROR": "Please enter a capacity"
+        },
+        "ADDRESS": {
+          "LABEL": "Address",
+          "PLACEHOLDER": "e.g. Brüsseler Platz 1, 45131 Essen",
+          "ERROR": "Please enter a location address"
+        }
+      }
+    },
+    "DIALOGS": {
+      "SUCCESS": {
+        "TITLE": "Awesome",
+        "MESSAGE": "You successfully edited the team area!"
+      },
+      "ERROR": {
+        "TITLE": "Error!",
+        "MESSAGE": "Edit team area failed. Please try again later."
+      }
+    }
+  },
+  "USER_PROFILE": {
+    "PAGE_TITLE": "Profile settings",
+    "PAGE_DESCRIPTION": "Specify your settings: You can add your first and last name that will be displayed in your profile instead of your email address. Additionally you can agree to an Opt-In, which allows to make your personal data (e. g. name) visible to others in the bookings.",
+    "FORM": {
+      "TITLE": "Your profile information",
+      "FIELDS": {
+        "EMAIL": {
+          "LABEL": "Email address"
+        },
+        "FIRSTNAME": {
+          "LABEL": "First name",
+          "ERROR": "Please enter a valid name"
+        },
+        "LASTNAME": {
+          "LABEL": "Last name",
+          "ERROR": "Please enter a valid name"
+        },
+        "DATA_PRIVACY_AGREEMENT": {
+          "LABEL": "I agree that my personal data in the bookings are visible to other users."
+        }
+      }
+    },
+    "DIALOGS": {
+      "SUCCESS": {
+        "TITLE": "Awesome",
+        "MESSAGE": "You successfully updated your user profile!"
+      },
+      "ERROR": {
+        "TITLE": "Error!",
+        "MESSAGE": "It seems something went wrong while updating your user profile."
+      }
+    },
+    "MY_BOOKINGS": {
+      "LINK": "Back to my bookings"
+    }
+  },
+  "POST_BOOKING": {
+    "PAGE_TITLE": "How we protect ourselves and our colleagues",
+    "PAGE_DESCRIPTION": "When you check into the office, take care of you health and protect your colleagues by doing the following basic protective measures against COVID-19:",
+    "FORM": {
+      "PROTECT_WASH_TITLE": "Wash your hands",
+      "PROTECT_WASH_INFO": "Wash your hands image",
+      "PROTECT_DIST_TITLE": "Keep distance",
+      "PROTECT_DIST_INFO": "Keep distance image",
+      "PROTECT_HAND_TITLE": "No hand shaking",
+      "PROTECT_HAND_INFO": "No hand shaking image",
+      "FURTHER_DETAILS": "For further details please refer to the corresponding",
+      "LOCATION": "location concepts",
+      "CONTACT": "of your team area or contact the",
+      "CONTACT_TITLE": "crisis management",
+      "BACK_BUTTON": "Back to bookings"
+    }
+  }
+}

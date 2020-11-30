@@ -1,0 +1,13 @@
+<button mat-button [matMenuTriggerFor]="menu" class="chooser"
+        [attr.aria-label]="'COMPONENTS.LANGUAGE_SELECTOR.CHANGE_LANGUAG' | translate">
+  <mat-icon svgIcon="web" class="icon"></mat-icon>
+  <span [attr.aria-describedby]="'selectLanguage' + currentLanguage">{{currentLanguage | uppercase}}</span>
+  <span class="visuallyhidden"
+        id="selectLanguage{{currentLanguage}}">{{'COMMON.LANGUAGES.' + currentLanguage | uppercase | translate}}</span>
+  <mat-icon svgIcon="menu-down"></mat-icon>
+</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item *ngFor="let language of availableLanguages"
+          [attr.aria-label]="'COMMON.LANGUAGES.' + language | uppercase | translate"
+          (click)="switchLanguage(language)">{{language | uppercase}}</button>
+</mat-menu>

@@ -1,0 +1,20 @@
+<h1 mat-dialog-title>{{data.title | translate}}</h1>
+<div mat-dialog-content class="text-align-center">
+  <div class="icon" *ngIf="data.icon">
+    <mat-icon svgIcon="{{data.icon}}"></mat-icon>
+  </div>
+  <div class="text" [innerHTML]="data.message | translate"></div>
+  <ng-template additional-content></ng-template>
+</div>
+<div mat-dialog-actions *ngIf="!data.buttons">
+  <button mat-button mat-dialog-close color="primary" >OK</button>
+</div>
+<div mat-dialog-actions *ngIf="data.buttons">
+  <ng-container *ngFor="let button of data.buttons; let i=index;">
+    <ng-container [ngSwitch]="button.type">
+      <button mat-button mat-dialog-close color="primary" *ngSwitchCase="'close'" (click)="onButtonClick(button)">OK</button>
+      <button mat-raised-button mat-dialog-close color="primary" *ngSwitchCase="'raised'" (click)="onButtonClick(button)">{{button.text | translate}}</button>
+      <button mat-button mat-dialog-close  color="primary" *ngSwitchDefault (click)="onButtonClick(button)">{{button.text | translate}}</button>
+    </ng-container>
+  </ng-container>
+</div>

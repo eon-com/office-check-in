@@ -1,0 +1,17 @@
+test:
+ stage: test
+ image: trion/ng-cli-karma
+ allow_failure: false
+
+ before_script:
+  - npm ci
+  - ng build process-helper
+
+ script:
+  - ng test --progress false --watch false
+ 
+ only:
+  - merge_requests
+ 
+ tags:
+  - docker

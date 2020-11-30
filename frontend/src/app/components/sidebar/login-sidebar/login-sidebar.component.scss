@@ -1,0 +1,13 @@
+@import "mixins/sidebar";
+
+:host {
+  @include sidebar-background();
+
+  .content {
+    @include sidebar-content();
+  }
+
+  .menu {
+    margin-top: auto;
+  }
+}

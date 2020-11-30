@@ -1,0 +1,470 @@
+@import "theme";
+@import "mixins";
+@import "animations/shake";
+
+@import url('https://fonts.googleapis.com/css2?family=Asap:wght@500&display=swap');
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$office-check-in-primary: mat-palette($md-yellow, 500, 100, 0);
+$office-check-in-secondary: mat-palette($md-blue, 0, 100, 500);
+
+// The warn palette is optional (defaults to red).
+$office-check-in-warn: mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$office-check-in-theme: mat-light-theme($office-check-in-primary, $office-check-in-secondary, $office-check-in-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($office-check-in-theme);
+
+$config: mat-typography-config(
+  $font-family: 'Asap, Helvetica, sans-serif',
+  $button: mat-typography-level(1rem, 1rem, 600)
+);
+@include mat-button-typography($config);
+
+@include mat-button-theme($office-check-in-theme);
+
+/*
+ Fonts
+ */
+@font-face {
+  font-family: 'Asap Bold';
+  font-style: normal;
+  font-weight: 700;
+  src: url('./assets/fonts/Asap-Bold.ttf'); /* For IE6-8 */
+}
+
+@font-face {
+  font-family: 'Asap Medium';
+  font-style: normal;
+  font-weight: 500;
+  src: url('./assets/fonts/Asap-Medium.ttf'); /* For IE6-8 */
+}
+
+@font-face {
+  font-family: 'Asap';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./assets/fonts/Asap-Regular.ttf');
+}
+
+/* You can add global styles to this file, and also import other style files */
+
+* {
+  font-family: $font-regular;
+}
+
+html, body {
+  height: 100%;
+  color: $color-text;
+}
+
+body {
+  margin: 0;
+  font-family: 'Asap', "Helvetica Neue", sans-serif;
+  font-size: 16px;
+
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-image: url('assets/images/bg-image.jpg');
+  background-position: 50% 50%;
+}
+
+
+/*
+ Global styles
+ */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+  color: mat-color($md-blue, 500);
+  font-family: 'Asap Bold', Arial, 'sans-serif', serif;
+}
+
+p {
+  font-size: 16px;
+  line-height: 23px;
+  color: mat-color($md-blue, 500);
+}
+
+a {
+  color: mat-color($office-check-in-primary);
+  text-decoration: none;
+  font-family: $font-bold;
+  cursor: pointer;
+  position: relative;
+
+  span:not(.mat-button-wrapper) {
+    position: relative;
+    font-family: $font-bold;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -2px;
+      left: 0;
+      background-color: mat-color($office-check-in-primary);
+      visibility: hidden;
+      transition: all 0.5s ease-out 0s;
+    }
+  }
+
+  &:link {
+    color: mat-color($office-check-in-primary);
+  }
+
+  &:hover {
+    color: mat-color($office-check-in-primary);
+
+    span:not(.mat-button-wrapper)::before {
+      visibility: visible;
+      width: 100%;
+    }
+  }
+
+  &.icon-link {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+
+    .mat-icon {
+      @include margin($right: 0.5rem);
+    }
+  }
+}
+
+ul.menu-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    margin-left: 0;
+  }
+}
+
+button {
+  &.icon-button {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+
+    .mat-icon {
+      @include margin($right: 0.5rem);
+    }
+  }
+}
+
+.message {
+  font-style: italic;
+}
+
+strong,
+.strong {
+  font-family: "Asap Medium", Helvetica, sans-serif;
+}
+
+.hidden {
+  display: none;
+}
+
+// For screen readers
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.sub-text {
+  font-size: 0.8rem;
+  color: $color-text-medium;
+}
+
+.margin {
+  &-top {
+    @include margin($top: 1rem);
+  }
+
+  &-right {
+    @include margin($right: 1rem);
+  }
+
+  &-bottom {
+    @include margin($bottom: 1rem);
+  }
+
+  &-right {
+    @include margin($right: 1rem);
+  }
+
+  &-all {
+    @include margin(1rem, 1rem, 1rem, 1rem);
+  }
+
+  &-none {
+    @include margin(0, 0, 0, 0);
+  }
+}
+
+.padding {
+  &-top {
+    @include padding($top: 1rem);
+  }
+
+  &-right {
+    @include padding($right: 1rem);
+  }
+
+  &-bottom {
+    @include padding($bottom: 1rem);
+  }
+
+  &-right {
+    @include padding($right: 1rem);
+  }
+
+  &-all {
+    @include padding(1rem, 1rem, 1rem, 1rem);
+  }
+
+  &-none {
+    @include padding(0, 0, 0, 0);
+  }
+}
+
+.text-align {
+  &-left {
+    text-align: left;
+  }
+
+  &-center {
+    text-align: center;
+  }
+
+  &-right {
+    text-align: right;
+  }
+}
+
+.text-ellipsis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.is-blurred {
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+}
+
+.flex {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex: 1 1 auto;
+
+  &.justify-content-between {
+    justify-content: space-between;
+  }
+
+  > * {
+    flex: 0 0 auto;
+  }
+
+  &.flex-full {
+    > * {
+      flex: 1 1 100%;
+      width: 100%;
+    }
+  }
+
+  &.flex-row {
+    flex-direction: row;
+  }
+
+  &.flex-wrap {
+    flex-wrap: wrap;
+  }
+
+  &.flex-wrap-reverse {
+    flex-wrap: wrap-reverse;
+  }
+
+  .flex-small-content {
+    max-width: 400px;
+    width: 100%;
+  }
+}
+
+.flex-space {
+  flex: 1 1 100%;
+}
+
+.flex-space-fixed {
+  flex: 1 1 5rem;
+}
+
+.flex-nogrow {
+  flex: 0 0 auto;
+}
+
+.flex-center {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  flex: 1 1 auto;;
+
+  .flex-center-content {
+    max-width: 400px;
+    width: 100%;
+  }
+}
+
+.content {
+  position: relative;
+}
+
+.significant-content {
+  &.box {
+    @include padding(1rem, 1rem, 1rem, 1rem);
+    background-color: $color-background;
+    color: $color-grey-900;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 1.5rem;
+  }
+}
+
+/*
+ Global Sidebar Styles
+ */
+.sidebar {
+  h1 {
+    font-family: "Asap Bold", Helvetica, sans-serif;
+    font-size: 3rem;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+/*
+ Global Dialog Styles
+*/
+.dialog-error {
+  animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
+  transform: translate3d(0, 0, 0);
+}
+
+.toast {
+  background-color: $color-grey-900;
+  color: $color-white;
+  border: 2px solid mat-color($md-yellow, 500);
+  box-sizing: border-box;
+}
+
+/*
+ Angular component overrides
+ */
+.mat-form-field-appearance-outline {
+
+  input, textarea {
+    font-size: 1.2rem;
+  }
+}
+
+.mat-table {
+  .mat-header-cell {
+    color: $color-grey-900;
+    font-size: 1rem;
+  }
+
+  .mat-header-cell, .mat-cell {
+    &.text-align-right {
+      text-align: right !important;
+    }
+  }
+}
+
+/*
+ Global browser fills and fixes
+ */
+// Chrome autofilled input field background
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
+
+/*
+  helper components for layouting
+ */
+.mat-button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-top: 1em;
+}
+
+// Align icons in buttons
+.mat-button-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mat-step-icon {
+  background-color: mat-color($md-blue, 100) !important;
+}
+
+// Default style for animated content pages
+.ng-trigger-fadeInAnimation {
+  display: block;
+  height: 100%;
+}
+
+button, a {
+  &:focus {
+    @include a11y-outline(outline, mat-color($md-blue, 800));
+  }
+}
+
+// Adjust stroke button border size
+.mat-stroked-button {
+  border: 2px solid currentColor !important;
+}
+
+// Adjust width of Context Menu for Area View
+.area-menu {
+  max-width: inherit !important;
+}
+
+.mat-icon.den-logo-icon {
+  height: 4rem;
+  width: 11rem;
+}

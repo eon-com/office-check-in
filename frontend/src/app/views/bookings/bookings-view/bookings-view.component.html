@@ -1,0 +1,51 @@
+<app-page [headline]="'test'">
+  <h2>{{'BOOKINGS.LIST.PAGE_TITLE' | translate}}</h2>
+
+  <p [innerHTML]="'BOOKINGS.LIST.PAGE_DESCRIPTION' | translate"></p>
+
+  <app-notification-box *ngIf="dataSource && dataSource.length === 0" icon="emoticon-sad-outline"
+                        message="{{'BOOKINGS.LIST.INFO_NO_BOOKING_ITEMS' | translate}}"></app-notification-box>
+  <app-notification-box *ngIf="dataSource === null" icon="timer-sand"
+                        message="{{'COMMON.LOADING' | translate}}"></app-notification-box>
+  <app-notification-box *ngIf="dataSource === false" icon="emoticon-dead-outline"
+                        message="{{'COMMON.DATA_LOAD_ERROR' | translate}}"></app-notification-box>
+
+  <div *ngIf="dataSource && dataSource.length > 0">
+    <table mat-table [dataSource]="dataSource">
+
+      <!-- Position Column -->
+      <ng-container matColumnDef="date">
+        <th mat-header-cell *matHeaderCellDef>{{'BOOKINGS.LIST.TABLE.HEADER.CHECK_IN_DATE' | translate}}</th>
+        <td mat-cell *matCellDef="let element" class="strong"> {{element.date | localizedDate }} </td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="room">
+        <th mat-header-cell *matHeaderCellDef>{{'BOOKINGS.LIST.TABLE.HEADER.AREA' | translate}}</th>
+        <td mat-cell *matCellDef="let element"> {{element.area}} </td>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="presence">
+        <th mat-header-cell *matHeaderCellDef class="text-align-right">{{'BOOKINGS.LIST.TABLE.HEADER.PRESENCE' | translate}}</th>
+        <td mat-cell *matCellDef="let element" class="text-align-right"> {{element.presence}} </td>
+      </ng-container>
+
+      <!-- Action Column -->
+      <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef
+            class="text-align-right">{{'BOOKINGS.LIST.TABLE.HEADER.ACTION' | translate}}</th>
+        <td mat-cell *matCellDef="let element" class="text-align-right">
+          <button mat-icon-button (click)="requestBookingDelete(element)" [matTooltip]="'BOOKINGS.LIST.TABLE.ACTION.DELETE_BOOKING' | translate"
+                  [attr.aria-label]="'BOOKINGS.LIST.TABLE.ACTION.DELETE_BOOKING' | translate">
+            <mat-spinner *ngIf="isDeleting(element)" color="accent" diameter="24"></mat-spinner>
+            <mat-icon *ngIf="!isDeleting(element)" svgIcon="delete" color="accent"></mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+</app-page>

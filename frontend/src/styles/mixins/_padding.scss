@@ -1,0 +1,16 @@
+$padding: 1rem !default;
+
+@mixin padding($top: null, $right: null, $bottom: null, $left: null) {
+  @if ($top != null) {
+    padding-top: $top;
+  }
+  @if ($right != null) {
+    padding-right: $right;
+  }
+  @if ($bottom != null) {
+    padding-bottom: $bottom;
+  }
+  @if ($left != null) {
+    padding-left: $left;
+  }
+}

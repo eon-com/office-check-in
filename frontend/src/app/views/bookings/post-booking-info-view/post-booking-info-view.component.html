@@ -1,0 +1,20 @@
+<app-page>
+  <h2>{{'POST_BOOKING.PAGE_TITLE' | translate}}</h2>
+
+  <p>{{'POST_BOOKING.PAGE_DESCRIPTION' | translate}}</p>
+
+  <div class="flex">
+    <div class="protect-information">
+      <img src="../../../../assets/images/protect-information/01_img-wash-hand.jpg" title="Wash your hands" alt="Wash your hands">
+      <img src="../../../../assets/images/protect-information/02_img-mask.jpg" title="Use your mask" alt="Use your mask">
+      <img src="../../../../assets/images/protect-information/03_img-handshake.jpg" title="No handshakes" alt="No handshakes">
+      <img src="../../../../assets/images/protect-information/04_img-distance.jpg" title="Keep distance" alt="Keep distance">
+      <img src="../../../../assets/images/protect-information/05_img-gathering.jpg" title="Avoid gathering" alt="Avoid gathering">
+    </div>
+
+    <div class="flex-space"></div>
+    <a [routerLink]="Navigation.BOOKINGS" class="icon-link">
+      <mat-icon svgIcon="arrow-left"></mat-icon>
+      <span>{{'POST_BOOKING.FORM.BACK_BUTTON' | translate}}</span></a>
+  </div>
+</app-page>

@@ -1,0 +1,115 @@
+@import "theme";
+@import "mixins/border-radius";
+@import "mixins/padding";
+
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  .logo-desktop {
+    position: absolute;
+
+    @media only screen and (max-width: 65rem) {
+      display: none;
+    }
+
+
+    &.logo-dlab {
+      bottom: 5rem;
+      right: 5rem;
+      cursor: pointer;
+    }
+
+    &.logo-officecheckin {
+      top: 5rem;
+      left: 5rem;
+    }
+  }
+
+  .app-container {
+    z-index: 1;
+    display: flex;
+    flex-flow: column nowrap;
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    bottom: 0.5rem;
+    left: 0.5rem;
+    box-sizing: border-box;
+    background-color: white;
+    @include border-radius();
+    overflow: hidden;
+
+    @media only screen and (min-width: 65rem) {
+      position: relative;
+      top: unset;
+      right: unset;
+      bottom: unset;
+      left: unset;
+      min-width: 62.5rem;
+      max-width: 70rem;
+      min-height: 37.5rem;
+      max-height: 42rem;
+      width: 100%;
+      height: 100%;
+      margin: 5rem;
+    }
+
+    .mat-drawer-container {
+      background-color: initial;
+    }
+
+    .sidenav-container {
+      height: 100%;
+      flex: 1 1 auto;
+
+      .mat-sidenav {
+        background-color: $color-background;
+        border-right: none;
+      }
+
+      .mat-sidenav-content {
+        position: absolute;
+        right: 0;
+        left: 0;
+        top: 0;
+        bottom: 0;
+      }
+    }
+
+    .mat-toolbar.mobile-toolbar {
+      @include padding(0, 0.5rem, 0, 0.1rem);
+      background: $color-white;
+      box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+      z-index: 10;
+
+      .logo-mobile {
+        height: 60%;
+
+      }
+    }
+
+    .logo {
+      width: 120px;
+      color: $color-secondary;
+    }
+
+    .app-name {
+      color: $color-primary;
+    }
+
+    .sidebar {
+      height: 100%;
+      width: 300px;
+    }
+
+    .page {
+      height: 100%;
+      overflow: hidden;
+    }
+  }
+
+}
+

@@ -1,0 +1,44 @@
+@import "src/styles/theme";
+@import "src/styles/mixins/padding";
+
+:host {
+  .mat-radio-group {
+    display: flex;
+    flex-flow: column nowrap;
+
+    .mat-radio-button {
+      @include padding($top: 1rem, $bottom: 1rem);
+    }
+  }
+
+  ::ng-deep {
+    .mat-stepper-vertical {
+
+      .mat-step-header {
+        .mat-step-label {
+          font-size: 1rem;
+
+          &.mat-step-label-selected {
+            font-family: $font-bold;
+          }
+        }
+      }
+
+      .mat-vertical-stepper-content {
+        .calendar-step {
+          @include padding(0, 0, 0, 0);
+        }
+      }
+    }
+  }
+}
+
+.button-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap-reverse;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 2rem;
+}

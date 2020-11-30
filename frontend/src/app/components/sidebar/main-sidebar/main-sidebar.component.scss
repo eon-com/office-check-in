@@ -1,0 +1,29 @@
+@import "theme";
+@import "mixins/padding";
+@import "mixins/margin";
+@import "mixins/sidebar";
+
+.main-sidebar {
+  .content {
+    @include sidebar-content();
+  }
+
+  .user {
+    @include margin($bottom: 1.5rem);
+    @include padding(0.2rem, 0.2rem, 0.2rem, 0.2rem);
+
+    display: flex;
+    align-items: center;
+
+    app-avatar {
+      margin-right: 0.5rem;
+      width: 2rem;
+      height: 2rem;
+      background-color: $color-grey-500;
+      color: white;
+      flex: 0 0 auto;
+      font-size: 1rem;
+    }
+  }
+
+}

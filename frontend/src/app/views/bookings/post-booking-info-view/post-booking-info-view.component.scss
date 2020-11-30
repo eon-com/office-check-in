@@ -1,0 +1,25 @@
+
+.protect-information {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+
+  @media only screen and (min-width: 65rem) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: start;
+  }
+
+  img {
+    width: 100%;
+    max-width: 20rem;
+    margin-bottom: 10px;
+
+    @media only screen and (min-width: 65rem) {
+      width: 14rem;
+      margin: 0 10px 10px 0;
+    }
+  }
+}

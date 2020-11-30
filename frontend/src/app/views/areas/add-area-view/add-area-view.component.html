@@ -1,0 +1,34 @@
+<app-page>
+  <h2>{{'CREATE_AREA.PAGE_TITLE' | translate}}</h2>
+
+  <p>{{'CREATE_AREA.PAGE_DESCRIPTION' | translate}}</p>
+
+  <div class="flex">
+    <div class="flex-small-content">
+      <h3 class="margin-top">{{'CREATE_AREA.FORM.TITLE' | translate}}</h3>
+      <form class="margin-top" (submit)="createArea()" autocomplete="off" [formGroup]="createAreaForm">
+        <mat-form-field appearance="outline">
+          <mat-label>{{'CREATE_AREA.FORM.FIELDS.NAME.LABEL' | translate}}</mat-label>
+          <input matInput name="name" placeholder="{{'CREATE_AREA.FORM.FIELDS.NAME.PLACEHOLDER' | translate}}"
+                 formControlName="name" aria-required="true">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>{{'CREATE_AREA.FORM.FIELDS.CAPACITY.LABEL' | translate}}</mat-label>
+          <input matInput name="capacity" type="number"
+                 placeholder="{{'CREATE_AREA.FORM.FIELDS.CAPACITY.PLACEHOLDER' | translate}}" formControlName="capacity"
+                 aria-required="true" min="0">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>{{'CREATE_AREA.FORM.FIELDS.ADDRESS.LABEL' | translate}}</mat-label>
+          <input matInput name="address" type="text"
+                 placeholder="{{'CREATE_AREA.FORM.FIELDS.ADDRESS.PLACEHOLDER' | translate}}" formControlName="address"
+                 aria-required="true">
+        </mat-form-field>
+
+        <mat-spinner-button (btnClick)="createArea()" [options]="createAreaBtnOption"></mat-spinner-button>
+      </form>
+    </div>
+  </div>
+</app-page>

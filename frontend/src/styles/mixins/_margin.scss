@@ -1,0 +1,17 @@
+$margin: 1rem !default;
+
+@mixin margin($top: null, $right: null, $bottom: null, $left: null) {
+  @if ($top != null) {
+    margin-top: $top;
+  }
+  @if ($right != null) {
+    margin-right: $right;
+  }
+  @if ($bottom != null) {
+    margin-bottom: $bottom;
+  }
+  @if ($left != null) {
+    margin-left: $left;
+  }
+}
+

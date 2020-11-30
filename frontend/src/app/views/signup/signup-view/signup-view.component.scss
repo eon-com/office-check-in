@@ -1,0 +1,11 @@
+@import "src/styles/mixins";
+
+form {
+  display: flex;
+  flex-flow: column nowrap;
+  max-width: 400px;
+
+  .mat-divider {
+    @include margin($bottom: 1rem);
+  }
+}

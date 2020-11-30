@@ -1,0 +1,57 @@
+@import "src/styles/theme";
+@import "src/styles/mixins";
+
+.content {
+  width: 100%;
+
+  @media screen and (max-width: 65rem) {
+    flex-direction: column;
+
+    .flex-space-fixed {
+      display: none;
+    }
+  }
+
+  a {
+    width: 100%;
+    flex: 1 1 100%;
+
+    mat-card {
+      padding: 24px;
+      box-sizing: border-box;
+      min-height: 325px;
+
+      @media screen and (max-width: 65rem) {
+        max-width: initial;
+        min-height: unset;
+      }
+
+      &:hover {
+        @include mat-elevation(8);
+      }
+
+      .pictogram {
+        width: 90px;
+        height: 90px;
+        font-size: 90px;
+        color: mat-color($md-yellow, 500);
+      }
+
+      .title {
+        align-items: center;
+        justify-content: center;
+        font-family: $font-bold;
+        font-size: 26px;
+        line-height: 31px;
+        color: mat-color($md-blue, 500);
+        margin: 10px 0 24px 0;
+      }
+
+      .message {
+        font-size: 14px;
+        line-height: 20px;
+        color: mat-color($md-blue, 300);
+      }
+    }
+  }
+}

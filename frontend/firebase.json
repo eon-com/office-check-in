@@ -1,0 +1,38 @@
+{
+  "hosting": [
+    {
+      "target": "dev",
+      "public": "dist/office-check-in",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    },
+    {
+      "target": "prod",
+      "public": "dist/office-check-in",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ],
+  "database": {
+    "rules": "database.rules.json"
+  }
+}
+

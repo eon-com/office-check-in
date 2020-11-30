@@ -1,0 +1,27 @@
+@import "theme";
+@import "mixins/padding";
+
+.mat-dialog-content {
+  .mat-icon {
+    color: $color-text-light;
+    width: 5rem;
+    height: 5rem;
+  }
+
+  ul {
+    li {
+      text-align: left;
+    }
+  }
+
+  .additional-content {
+    @include padding(1rem, 1rem, 1rem, 1rem);
+    background-color: $color-background;
+    color: mat-color($md-blue, 400);
+
+    .additional-content-line1 {
+      font-size: 1.5rem;
+      font-family: $font-bold;;
+    }
+  }
+}

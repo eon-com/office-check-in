@@ -1,0 +1,14 @@
+@import "theme";
+@import "mixins/padding";
+@import "mixins/margin";
+
+:host {
+  .chooser {
+    @include padding(0, 0, 0, 0.25rem);
+
+    .icon {
+      @include margin(0, 0.5rem, 0, 0);
+      color: $color-text-light;
+    }
+  }
+}

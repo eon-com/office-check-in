@@ -1,0 +1,46 @@
+<app-page>
+  <h2>{{'SIGNUP_SELECT.PAGE_TITLE' | translate}}</h2>
+
+  <p>{{'SIGNUP_SELECT.PAGE_DESCRIPTION' | translate}}</p>
+
+  <div class="flex">
+    <h3 class="margin-top">{{'SIGNUP_SELECT.NAVIGATION.TITLE' | translate}}</h3>
+    <div class="flex flex-row content margin-top">
+      <a [routerLink]="Navigation.SIGNUP_MEMBER" class="margin-top"
+         [attr.aria-label]="'SIGNUP_SELECT.NAVIGATION.LINKS.MEMBER.TITLE' | translate">
+        <mat-card class="text-align-center mat-elevation-z5" mat-ripple [matRippleColor]="">
+          <div class="prefix">{{ 'SIGNUP_SELECT.NAVIGATION.LINKS.MEMBER.PREFIX' | translate }}</div>
+          <div class="flex flex-row title">
+            {{ 'SIGNUP_SELECT.NAVIGATION.LINKS.MEMBER.TITLE' | translate }}
+          </div>
+          <mat-icon svgIcon="account" color="accent" class="pictogram"></mat-icon>
+          <div class="message">
+            {{ 'SIGNUP_SELECT.DIALOGS.HINT.MEMBER.MESSAGE' | translate }}
+          </div>
+        </mat-card>
+      </a>
+
+      <div class="flex-space-fixed"></div>
+
+      <a [routerLink]="Navigation.SIGNUP_MANAGER" class="margin-top"
+         [attr.aria-label]="'SIGNUP_SELECT.NAVIGATION.LINKS.MANAGER.TITLE' | translate">
+        <mat-card class="text-align-center mat-elevation-z5" mat-ripple [matRippleColor]="">
+          <div class="prefix">{{ 'SIGNUP_SELECT.NAVIGATION.LINKS.MANAGER.PREFIX' | translate }}</div>
+          <div class="flex flex-row title">
+            {{ 'SIGNUP_SELECT.NAVIGATION.LINKS.MANAGER.TITLE' | translate }}
+          </div>
+          <mat-icon svgIcon="account-supervisor" color="accent" class="pictogram"></mat-icon>
+          <div class="message">
+            {{ 'SIGNUP_SELECT.DIALOGS.HINT.MANAGER.MESSAGE' | translate }}
+          </div>
+        </mat-card>
+      </a>
+    </div>
+
+    <div class="flex-space"></div>
+    <a [routerLink]="Navigation.LOGIN" class="icon-link margin-top">
+      <mat-icon svgIcon="arrow-left"></mat-icon>
+      <span>{{'COMMON.BUTTONS.BACK_BUTTON.LOGIN' | translate}}</span>
+    </a>
+  </div>
+</app-page>
